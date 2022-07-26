@@ -26,7 +26,9 @@ extension FollowerListViewController: UITableViewDataSource {
 extension FollowerListViewController: FollowerViewModelOutput {
 
     func success() {
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     func errorMessage(_ error: String) {
