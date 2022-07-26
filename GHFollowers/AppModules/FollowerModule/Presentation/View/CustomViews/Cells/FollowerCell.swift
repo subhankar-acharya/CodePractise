@@ -9,9 +9,9 @@ import UIKit
 
 class FollowerCell: UITableViewCell {
 
-    static let reuseID  = "FollowerCell"
+    static let reuseID = "FollowerCell"
     let avatarImageView = GFAvatarImageView(frame: .zero)
-    let usernameLabel   = GFTitleLabel(textAlignment: .right, fontSize: 16)
+    let usernameLabel = GFTitleLabel(textAlignment: .right, fontSize: 16)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,7 +28,6 @@ class FollowerCell: UITableViewCell {
     }
 
     private func configure() {
-        usernameLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         addSubview(avatarImageView)
         addSubview(usernameLabel)
 

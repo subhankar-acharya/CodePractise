@@ -8,12 +8,14 @@
 import Foundation
 import UIKit
 
+/// Injecting all the required layers of clean architecture for Search module.
 class SearchModule {
 
     init() {
 
     }
 
+    //setting up Search View Controller
     func createSearchViewController() -> UIViewController {
         let viewController = SearchViewController.initialize(on: .main)
         viewController.viewModel = createSearchViewModel()
@@ -22,6 +24,7 @@ class SearchModule {
         return viewController
     }
 
+    //use case injected to view model
     private func createSearchViewModel() -> ISearchViewModel {
         let viewModel = SearchViewModelImpl(useCase: createSearchUseCase())
         return viewModel

@@ -7,16 +7,10 @@
 
 import Foundation
 import UIKit
-
+/// Utility to initialize the view controller
 enum Storyboard: String {
     case main = "Main"
 }
-
-/**
-
- ViewController Utility where we can add another functionality for UIViewController
-
- */
 
 protocol ViewControllerUtilities where Self: UIViewController {
     static func initialize(on storyboard: Storyboard) -> Self
@@ -31,7 +25,6 @@ extension ViewControllerUtilities {
         }
         return controller
     }
-
 }
 
 extension UIViewController: ViewControllerUtilities {}

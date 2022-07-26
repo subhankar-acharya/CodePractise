@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// Makes network call after preparing url
 class FollowerServiceImpl: IFollowerService {
 
     private let network: INetworkManager

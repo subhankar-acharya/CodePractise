@@ -21,14 +21,6 @@ extension FollowerListViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
-    }
 }
 
 extension FollowerListViewController: FollowerViewModelOutput {
@@ -37,7 +29,7 @@ extension FollowerListViewController: FollowerViewModelOutput {
         tableView.reloadData()
     }
 
-    func gotError(_ error: String) {
+    func errorMessage(_ error: String) {
         showAlert(message: error, on: self)
     }
 }

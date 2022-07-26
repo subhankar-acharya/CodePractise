@@ -39,7 +39,7 @@ class SearchFollowerViewModelTest: XCTestCase {
             if result {
                 XCTFail("Success not expected")
             } else {
-                self.searchViewModel?.outputDelegate?.gotError("Failed Error")
+                self.searchViewModel?.outputDelegate?.errorMessage("Failed Error")
             }
         }
         wait(for: [expecatation], timeout: 1.0)

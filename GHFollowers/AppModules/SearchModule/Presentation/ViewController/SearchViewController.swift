@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/// Passes username string to FollowerListViewController and shows validation message in case of error.
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var userNameTextField: UITextField!

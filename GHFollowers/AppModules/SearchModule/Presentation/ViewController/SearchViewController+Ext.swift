@@ -22,7 +22,7 @@ extension SearchViewController: SearchViewModelOutput {
         self.navigationController?.pushViewController(followerListViewController, animated: true)
     }
 
-    func gotError(_ error: String) {
+    func errorMessage(_ error: String) {
         showAlert(message: error, on: self)
     }
 }

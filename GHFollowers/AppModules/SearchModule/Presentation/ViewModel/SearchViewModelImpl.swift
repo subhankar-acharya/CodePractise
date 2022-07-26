@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Has the responsibility of passing on the username to use case layer for validation and talks to view controller with data
 class SearchViewModelImpl: ISearchViewModel {
 
     var outputDelegate: SearchViewModelOutput?
@@ -24,7 +25,7 @@ class SearchViewModelImpl: ISearchViewModel {
             if result {
                 self.outputDelegate?.success()
             } else {
-                self.outputDelegate?.gotError("Please enter a username")
+                self.outputDelegate?.errorMessage("Please enter a username")
             }
         }
     }

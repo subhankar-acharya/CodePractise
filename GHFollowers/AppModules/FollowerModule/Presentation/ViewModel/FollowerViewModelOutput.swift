@@ -9,5 +9,5 @@ import Foundation
 
 protocol FollowerViewModelOutput {
     func success()
-    func gotError(_ error: String)
+    func errorMessage(_ error: String)
 }

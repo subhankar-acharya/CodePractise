@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// Passes data to service layer and returns back response 
 class FollowerRepositoryImpl: IFollowerRepository {
 
     private let service: IFollowerService

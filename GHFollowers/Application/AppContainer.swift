@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AppContainer {
-
+    
     lazy var networkManager: INetworkManager = {
        let networkManager = NetworkManger()
         return networkManager

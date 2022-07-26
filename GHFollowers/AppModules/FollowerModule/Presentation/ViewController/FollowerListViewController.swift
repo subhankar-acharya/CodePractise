@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+/// Populates data passed back to it by follower view model
 class FollowerListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!

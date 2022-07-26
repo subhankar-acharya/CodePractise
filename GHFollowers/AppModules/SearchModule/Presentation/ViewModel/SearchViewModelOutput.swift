@@ -9,5 +9,5 @@ import Foundation
 
 protocol SearchViewModelOutput {
     func success()
-    func gotError(_ error: String)
+    func errorMessage(_ error: String)
 }

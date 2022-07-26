@@ -7,7 +7,7 @@
 
 import Foundation
 import PromiseKit
-
+// Network manager
 class NetworkManger: INetworkManager {
 
     private let session: URLSession
@@ -20,8 +20,8 @@ class NetworkManger: INetworkManager {
         return Promise { seal in
             let request = URLRequest(url: endPoint)
             let task = session.dataTask(with: request) { data, response, error in
-                if let _ = error {
-                    seal.reject(GFError.inavalidUsername)
+                if let error = error {
+                    seal.reject(error)
                 } else {
 
                     do {
@@ -33,7 +33,7 @@ class NetworkManger: INetworkManager {
                         }
                     } catch {
                         print(error.localizedDescription)
-                        seal.reject(GFError.inavlidResponse)
+                        seal.reject(error)
                     }
                 }
             }

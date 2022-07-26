@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// Passes user name string to repository layer 
 class FollowerUseCaseImpl: IFollowerUseCase {
 
     private let repository: IFollowerRepository
