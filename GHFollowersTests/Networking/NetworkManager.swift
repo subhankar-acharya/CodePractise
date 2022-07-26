@@ -23,7 +23,6 @@ class NetworkManagerTest: XCTestCase {
     func test_NetworkClassForSuccess() {
 
         let expecatation = expectation(description: "Success")
-        let data = loadJsonData(file: "Follower")
 
         MockURLProtocol.requestHandler = { request in
             guard let url = request.url else {
@@ -31,14 +30,14 @@ class NetworkManagerTest: XCTestCase {
             }
 
             let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-            return (response, data)
+            return (response, MockFollowersData.mockDictionary())
         }
 
         networkManager.request([Follower].self, endPoint: testUrl)
             .done { model in
                 let followerCount = model.count
                 if followerCount >= 1 {
-                    XCTAssertTrue(model.first?.login == "ABC")
+                    XCTAssertTrue(model.first?.login == "Test User")
                     expecatation.fulfill()
                 }
             }.catch { error in
@@ -46,19 +45,6 @@ class NetworkManagerTest: XCTestCase {
             }
 
         wait(for: [expecatation], timeout: 1.0)
-    }
-
-    func test_NetworkClassForURLFailure() {
-
-        let expectation = expectation(description: "Should get URL Failure")
-
-        networkManager.request([Follower].self, endPoint: testUrl)
-            .catch { error in
-                XCTAssertTrue((error as NSError).domain == "URL")
-                expectation.fulfill()
-            }
-
-        wait(for: [expectation], timeout: 1.0)
     }
 
     func test_ParsingFailure() {
@@ -77,19 +63,6 @@ class NetworkManagerTest: XCTestCase {
                 expectation.fulfill()
             }
 
-
         wait(for: [expectation], timeout: 1.0)
       }
-
-    private func loadJsonData(file: String) -> Data? {
-
-        if let jsonFilePath = Bundle(for: type(of: self)).path(forResource: file, ofType: "json") {
-            let jsonFileURL = URL(fileURLWithPath: jsonFilePath)
-
-            if let jsonData = try? Data(contentsOf: jsonFileURL) {
-                return jsonData
-            }
-        }
-        return nil
-    }
 }
