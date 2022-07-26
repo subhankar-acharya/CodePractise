@@ -52,7 +52,7 @@ class SearchFlowUITests: XCTestCase {
         userName.tap()
         userName.typeText("twostraws")
         app.buttons["getFollowersButton"].tap()
-        XCTAssertTrue(app.otherElements["FollowerListViewController"].waitForExistence(timeout: 1), "The FollowerListViewController was not preseneted when the Get Followers button was tapped")
+        XCTAssertTrue(app.otherElements["FollowerListViewController"].waitForExistence(timeout: 1), "The FollowerListViewController was not presented when the Get Followers button was tapped")
     }
 
     func testLaunchPerformance() throws {
