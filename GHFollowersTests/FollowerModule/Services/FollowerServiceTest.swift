@@ -37,7 +37,6 @@ class FollowerServiceTest: XCTestCase {
         wait(for: [expecatation], timeout: 1.0)
     }
 
-
     func testService_Error() {
         let expecatation = expectation(description: "User service on success case")
         mockNetworkManager.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kFailedErrorMeesage])
@@ -47,5 +46,4 @@ class FollowerServiceTest: XCTestCase {
             }
         wait(for: [expecatation], timeout: 1.0)
     }
-
 }

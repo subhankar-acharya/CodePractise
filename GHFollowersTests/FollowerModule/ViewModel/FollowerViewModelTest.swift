@@ -40,7 +40,7 @@ extension UserViewModelTest: FollowerViewModelOutput {
         expecatation.fulfill()
     }
 
-    func gotError(_ error: String) {
+    func errorMessage(_ error: String) {
         XCTAssertTrue(error == "Failed Error")
         expecatation.fulfill()
     }
