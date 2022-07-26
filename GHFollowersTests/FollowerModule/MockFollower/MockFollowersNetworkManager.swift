@@ -16,8 +16,8 @@ class MockFollowersNetworkManager: INetworkManager {
 
     func request<T: Codable>(_ type: T.Type, endPoint: URL) -> Response<T> {
         return Promise { seal in
-            if let _ = error {
-                seal.reject(GFError.invalidData)
+            if let error = error {
+                seal.reject(error)
             } else {
                 if let follower = follower {
                     seal.fulfill(follower as! T)

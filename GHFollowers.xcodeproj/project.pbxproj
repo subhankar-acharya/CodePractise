@@ -64,7 +64,6 @@
 		9EBC771E288FAE5500638A08 /* SearchFollowerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC771D288FAE5500638A08 /* SearchFollowerViewModelTest.swift */; };
 		9EBC7724288FBA3E00638A08 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC7723288FBA3E00638A08 /* SearchViewControllerTests.swift */; };
 		9EBC7727288FD27E00638A08 /* ViewControllerNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC7726288FD27E00638A08 /* ViewControllerNavigationTests.swift */; };
-		9EBC7729288FEF3600638A08 /* FollowersListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC7728288FEF3600638A08 /* FollowersListViewControllerTests.swift */; };
 		9EBC772B288FF97E00638A08 /* SearchViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC772A288FF97E00638A08 /* SearchViewModelInput.swift */; };
 		9EBC772D288FFECF00638A08 /* SearchViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC772C288FFECF00638A08 /* SearchViewController+Ext.swift */; };
 		BFB1006B16100A04E5C25427 /* Pods_GHFollowersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0298005B98D0AFA1D16446 /* Pods_GHFollowersTests.framework */; };
@@ -158,7 +157,6 @@
 		9EBC771D288FAE5500638A08 /* SearchFollowerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFollowerViewModelTest.swift; sourceTree = "<group>"; };
 		9EBC7723288FBA3E00638A08 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 		9EBC7726288FD27E00638A08 /* ViewControllerNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNavigationTests.swift; sourceTree = "<group>"; };
-		9EBC7728288FEF3600638A08 /* FollowersListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListViewControllerTests.swift; sourceTree = "<group>"; };
 		9EBC772A288FF97E00638A08 /* SearchViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelInput.swift; sourceTree = "<group>"; };
 		9EBC772C288FFECF00638A08 /* SearchViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Ext.swift"; sourceTree = "<group>"; };
 		BD469AED6B02B3A7E22BA11E /* Pods-GHFollowers-GHFollowersUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowers-GHFollowersUITests.debug.xcconfig"; path = "Target Support Files/Pods-GHFollowers-GHFollowersUITests/Pods-GHFollowers-GHFollowersUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -642,7 +640,6 @@
 			children = (
 				9EBC7723288FBA3E00638A08 /* SearchViewControllerTests.swift */,
 				9EBC7726288FD27E00638A08 /* ViewControllerNavigationTests.swift */,
-				9EBC7728288FEF3600638A08 /* FollowersListViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -956,7 +953,6 @@
 				9EBC7724288FBA3E00638A08 /* SearchViewControllerTests.swift in Sources */,
 				9E9C6958288EDEE4003181AE /* MockFollowersUseCase.swift in Sources */,
 				9E9C695E288EE12B003181AE /* FollowerRepositoryTest.swift in Sources */,
-				9EBC7729288FEF3600638A08 /* FollowersListViewControllerTests.swift in Sources */,
 				9E9C6960288EE20E003181AE /* FollowerUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

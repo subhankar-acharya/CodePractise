@@ -16,8 +16,8 @@ class MockFollowersUseCase: IFollowerUseCase {
 
     func getFollowers(for userName: String) -> FollowerResponse {
         return Promise { seal in
-            if let _ = error {
-                seal.reject(GFError.invalidData)
+            if let error = error {
+                seal.reject(error)
             } else {
                 if let follower = follower {
                     seal.fulfill(follower)
