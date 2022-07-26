@@ -34,7 +34,6 @@ class NetworkManagerTest: XCTestCase {
             return (response, data)
         }
 
-        //let endPoint = NetworkRequest(path: "/users/", method: .get)
         networkManager.request([Follower].self, endPoint: testUrl)
             .done { model in
                 let followerCount = model.count
@@ -53,7 +52,6 @@ class NetworkManagerTest: XCTestCase {
 
         let expectation = expectation(description: "Should get URL Failure")
 
-        //let endPoint = NetworkRequest(path: "-;@,?:ą", method: .get)
         networkManager.request([Follower].self, endPoint: testUrl)
             .catch { error in
                 XCTAssertTrue((error as NSError).domain == "URL")
@@ -72,7 +70,6 @@ class NetworkManagerTest: XCTestCase {
           return (response, data)
         }
 
-        //let endPoint = NetworkRequest(path: "/users/", method: .get)
         networkManager.request(Follower.self, endPoint: testUrl)
             .done { model in
                 XCTFail("Success response was not expected.")
