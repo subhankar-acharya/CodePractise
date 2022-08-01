@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// Handles the request to complete the network operation. We intercept the network layer
 class MockURLProtocol: URLProtocol {
 
     static var requestHandler: ((URLRequest) throws -> (HTTPURLResponse, Data?))?
@@ -21,7 +21,7 @@ class MockURLProtocol: URLProtocol {
 
     override func startLoading() {
         guard let handler = MockURLProtocol.requestHandler else {
-            fatalError("Handler is unavailable.")
+            fatalError("The request handler is not available.")
         }
 
         do {

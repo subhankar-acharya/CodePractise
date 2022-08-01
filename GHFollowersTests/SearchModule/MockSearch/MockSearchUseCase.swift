@@ -8,7 +8,7 @@
 import Foundation
 @testable import GHFollowers
 
-class MockSearchUseCase: ISearchUseCase {
+class MockSearchUseCase: SearchUseCaseProtocol {
     
     func validateUser(for userName: String, completion: (Bool) -> ()) {
         if userName.isEmpty {

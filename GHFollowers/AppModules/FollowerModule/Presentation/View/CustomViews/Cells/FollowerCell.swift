@@ -9,7 +9,7 @@ import UIKit
 
 class FollowerCell: UITableViewCell {
 
-    static let reuseID = "FollowerCell"
+    static let reuseID = Constants.Cell.followerCellID
     let avatarImageView = GFAvatarImageView(frame: .zero)
     let usernameLabel = GFTitleLabel(textAlignment: .right, fontSize: 16)
 

@@ -10,15 +10,11 @@ import XCTest
 
 class FollowerRepositoryTest: XCTestCase {
 
-    struct ErrorMessage {
-        static let kFailedErrorMeesage = "Repository Failed Error"
-    }
-
-    var followerRepository: FollowerRepositoryImpl!
+    var followerRepository: FollowerRepository!
     let mockService = MockFollowersService()
 
     override func setUpWithError() throws {
-        followerRepository = FollowerRepositoryImpl(service: mockService)
+        followerRepository = FollowerRepository(service: mockService)
     }
 
     func testRepository_Success() {
@@ -40,10 +36,10 @@ class FollowerRepositoryTest: XCTestCase {
 
     func testRepository_Failure() {
         let expecatation = expectation(description: "Failure")
-        mockService.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kFailedErrorMeesage])
+        mockService.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kRepositoryFailedErrorMessage])
         followerRepository.makeServiceCallToGetFollowers(for: "Test User")
             .catch {error in
-                XCTAssertTrue(error.localizedDescription == ErrorMessage.kFailedErrorMeesage)
+                XCTAssertTrue(error.localizedDescription == ErrorMessage.kRepositoryFailedErrorMessage)
                 expecatation.fulfill()
             }
 

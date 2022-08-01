@@ -8,7 +8,7 @@
 import Foundation
 import PromiseKit
 // Network manager
-class NetworkManger: INetworkManager {
+class NetworkManger: NetworkManagerProtocol {
 
     private let session: URLSession
 
@@ -23,7 +23,6 @@ class NetworkManger: INetworkManager {
                 if let error = error {
                     seal.reject(error)
                 } else {
-
                     do {
                         if let dataRecieved = data {
                             let decoder = JSONDecoder()

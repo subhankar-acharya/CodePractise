@@ -10,18 +10,15 @@ import XCTest
 
 class ViewControllerNavigationTests: XCTestCase {
 
-    var sut: SearchViewController!
+    var sut = SearchViewController.instantiate()
     var navigationController: UINavigationController!
 
     override func setUpWithError() throws {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyBoard.instantiateViewController(identifier: "SearchViewController") as SearchViewController
         sut.loadViewIfNeeded()
         navigationController = UINavigationController(rootViewController: sut)
     }
 
     override func tearDownWithError() throws {
-        sut = nil
         navigationController = nil
     }
 

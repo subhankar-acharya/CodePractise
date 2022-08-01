@@ -10,12 +10,12 @@ import XCTest
 
 class UserViewModelTest: XCTestCase {
 
-    var followerViewModel: FollowerViewModelImpl?
+    var followerViewModel: FollowerViewModel?
     var useCase = MockFollowersUseCase()
     var expecatation: XCTestExpectation!
 
     override func setUpWithError() throws {
-        followerViewModel = FollowerViewModelImpl(useCase: useCase, ghUserName: "Test User")
+        followerViewModel = FollowerViewModel(useCase: useCase, ghUserName: "Test User")
         followerViewModel?.outputDelegate = self
     }
 

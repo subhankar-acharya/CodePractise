@@ -1,5 +1,5 @@
 //
-//  FollowerUseCaseImpl.swift
+//  FollowerUseCase.swift
 //  GHFollowers
 //
 //  Created by Subhankar  Acharya on 21/07/22.
@@ -7,11 +7,11 @@
 
 import Foundation
 /// Passes user name string to repository layer 
-class FollowerUseCaseImpl: IFollowerUseCase {
+class FollowerUseCase: FollowerUseCaseProtocol {
 
-    private let repository: IFollowerRepository
+    private let repository: FollowerRepositoryProtocol
 
-    init(repository: IFollowerRepository) {
+    init(repository: FollowerRepositoryProtocol) {
         self.repository = repository
     }
 

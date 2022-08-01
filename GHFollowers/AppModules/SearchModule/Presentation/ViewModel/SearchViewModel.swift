@@ -1,5 +1,5 @@
 //
-//  ISerachViewModelImpl.swift
+//  SearchViewModel.swift
 //  GHFollowers
 //
 //  Created by Subhankar  Acharya on 26/07/22.
@@ -8,17 +8,19 @@
 import Foundation
 
 /// Has the responsibility of passing on the username to use case layer for validation and talks to view controller with data
-class SearchViewModelImpl: ISearchViewModel {
+final class SearchViewModel: SearchViewModelProtocol {
 
+    // MARK: - Properties
     var outputDelegate: SearchViewModelOutput?
     var inputDelegate: SearchViewModelInput?
+    private let useCase: SearchUseCaseProtocol
 
-    private let useCase: ISearchUseCase
-    
-    init(useCase: ISearchUseCase) {
+    // MARK: - Initialize
+    init(useCase: SearchUseCaseProtocol) {
         self.useCase = useCase
     }
 
+    // MARK: - Method
     func pushFollowerListVC() {
         let userName = self.inputDelegate?.getUserName() ?? ""
         self.useCase.validateUser(for: userName) { result in

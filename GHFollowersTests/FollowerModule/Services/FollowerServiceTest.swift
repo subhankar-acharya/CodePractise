@@ -10,15 +10,11 @@ import XCTest
 
 class FollowerServiceTest: XCTestCase {
 
-    struct ErrorMessage {
-        static let kFailedErrorMeesage = "User Failed Error"
-    }
-
-    var followerService: FollowerServiceImpl!
+    var followerService: FollowerService!
     let mockNetworkManager = MockFollowersNetworkManager()
 
     override func setUpWithError() throws {
-        followerService = FollowerServiceImpl(network: mockNetworkManager)
+        followerService = FollowerService(network: mockNetworkManager)
     }
 
     func testService_Success() {
@@ -38,8 +34,8 @@ class FollowerServiceTest: XCTestCase {
     }
 
     func testService_Error() {
-        let expecatation = expectation(description: "User service on success case")
-        mockNetworkManager.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kFailedErrorMeesage])
+        let expecatation = expectation(description: "Follower service on success case")
+        mockNetworkManager.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kServiceFailedErrorMeesage])
         followerService.makeNetworkRequest(for: "TestUser")
             .catch { _ in
                 expecatation.fulfill()

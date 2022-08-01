@@ -10,15 +10,11 @@ import XCTest
 
 class FollowerUseCaseTest: XCTestCase {
 
-    struct ErrorMessage {
-        static let kFailedErrorMeesage = "Use Case Failed Error"
-    }
-
-    var useCase: FollowerUseCaseImpl!
+    var useCase: FollowerUseCase!
     let repository = MockFollowersRepository()
 
     override func setUpWithError() throws {
-        useCase = FollowerUseCaseImpl(repository: repository)
+        useCase = FollowerUseCase(repository: repository)
     }
 
     func testUseCase_Success() {
@@ -40,11 +36,11 @@ class FollowerUseCaseTest: XCTestCase {
 
     func testUseCase_Failure() {
         let expecatation = expectation(description: "Failure")
-        repository.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kFailedErrorMeesage])
+        repository.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kUseCaseFailedErrorMessage])
 
         useCase.getFollowers(for: "Test User")
             .catch { error in
-                XCTAssertTrue(error.localizedDescription == ErrorMessage.kFailedErrorMeesage)
+                XCTAssertTrue(error.localizedDescription == ErrorMessage.kUseCaseFailedErrorMessage)
                 expecatation.fulfill()
             }
 

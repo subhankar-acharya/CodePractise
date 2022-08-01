@@ -8,6 +8,7 @@
 import UIKit
 
 extension FollowerListViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.followers.count ?? 0
     }
@@ -16,10 +17,17 @@ extension FollowerListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FollowerCell.reuseID) as? FollowerCell else {
             fatalError("Cell not found")
         }
-        if let users = viewModel?.followers[indexPath.row] {
-            cell.set(follower: users)
+        if let followers = viewModel?.followers[indexPath.row] {
+            cell.set(follower: followers)
         }
         return cell
+    }
+}
+
+extension FollowerListViewController: Alertable {
+
+    func fetchFollowers() {
+        viewModel?.fetchFollowers()
     }
 }
 
@@ -33,12 +41,5 @@ extension FollowerListViewController: FollowerViewModelOutput {
 
     func errorMessage(_ error: String) {
         showAlert(message: error, on: self)
-    }
-}
-
-extension FollowerListViewController: Alertable {
-
-    func fetchFollowers() {
-        viewModel?.fetchFollowers()
     }
 }

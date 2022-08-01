@@ -5,13 +5,12 @@
 //  Created by Subhankar Acharya on 24/07/22.
 //
 
-import Foundation
 import UIKit
 /// Setting up the Search module and global network variable to provide it to module which requires it in future.
 /// Test username: twostraws
-class AppContainer {
+final class AppContainer {
     
-    lazy var networkManager: INetworkManager = {
+    lazy var networkManager: NetworkManagerProtocol = {
        let networkManager = NetworkManger()
         return networkManager
     }()

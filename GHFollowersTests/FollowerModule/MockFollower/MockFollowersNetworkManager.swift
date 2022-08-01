@@ -9,7 +9,7 @@ import Foundation
 import PromiseKit
 @testable import GHFollowers
 
-class MockFollowersNetworkManager: INetworkManager {
+class MockFollowersNetworkManager: NetworkManagerProtocol {
 
     var follower: [Follower]?
     var error: Error?

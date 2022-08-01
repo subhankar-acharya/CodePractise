@@ -9,7 +9,7 @@ import Foundation
 import PromiseKit
 @testable import GHFollowers
 
-class MockFollowersRepository: IFollowerRepository {
+class MockFollowersRepository: FollowerRepositoryProtocol {
 
     var follower: [Follower]?
     var error: Error?

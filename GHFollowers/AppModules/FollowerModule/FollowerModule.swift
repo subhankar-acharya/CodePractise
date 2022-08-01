@@ -5,45 +5,47 @@
 //  Created by Subhankar Acharya on 21/07/22.
 //
 
-import Foundation
 import UIKit
 /// Builds up all the layer of Follower module.
-class FollowerModule {
+final class FollowerModule {
 
-    private let networkManager: INetworkManager
+    // MARK: - Properties
+    private let networkManager: NetworkManagerProtocol
     private let ghUserName:String
-    
+
+    // MARK: - Initialise
     init(ghUserName:String) {
         self.networkManager = AppContainer().networkManager
         self.ghUserName = ghUserName
     }
+
+    // MARK: - Methods
     //setting up Follower View Controller
     func createFollowerListViewController() -> UIViewController {
-        let viewController = FollowerListViewController.init(nibName: "FollowerListViewController", bundle: nil)
+        let viewController = FollowerListViewController.instantiate()
         viewController.viewModel = createFollowerViewModel()
         viewController.viewModel?.outputDelegate = viewController
         return viewController
     }
     //injecting use case layer
-    private func createFollowerViewModel() -> IFollowerViewModel {
-        let viewModel = FollowerViewModelImpl(useCase: createFollowerUseCase(), ghUserName: self.ghUserName)
+    private func createFollowerViewModel() -> FollowerViewModelProtocol {
+        let viewModel = FollowerViewModel(useCase: createFollowerUseCase(), ghUserName: self.ghUserName)
         return viewModel
     }
     //injecting repository layer
-    private func createFollowerUseCase() -> IFollowerUseCase {
-        let useCase = FollowerUseCaseImpl(repository: createFollowerRepository())
+    private func createFollowerUseCase() -> FollowerUseCaseProtocol {
+        let useCase = FollowerUseCase(repository: createFollowerRepository())
         return useCase
     }
     //injecting service layer
-    private func createFollowerRepository() -> IFollowerRepository {
-        let repository = FollowerRepositoryImpl(service: createFollowerService())
+    private func createFollowerRepository() -> FollowerRepositoryProtocol {
+        let repository = FollowerRepository(service: createFollowerService())
         return repository
     }
     // injecting network layer
-    private func createFollowerService() -> IFollowerService {
-        let service = FollowerServiceImpl(network: networkManager)
+    private func createFollowerService() -> FollowerServiceProtocol {
+        let service = FollowerService(network: networkManager)
         return service
     }
-
 }
 

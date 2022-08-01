@@ -10,18 +10,10 @@ import XCTest
 
 class SearchViewControllerTests: XCTestCase {
 
-    var storyBoard: UIStoryboard!
-    var sut: SearchViewController!
+    var sut = SearchViewController.instantiate()
 
     override func setUpWithError() throws {
-        storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let sut = storyBoard.instantiateViewController(identifier: "SearchViewController") as SearchViewController
         sut.loadViewIfNeeded()
-    }
-
-    override func tearDownWithError() throws {
-        storyBoard = nil
-        sut = nil
     }
 
     func testSearchViewController_WhenCreated_HasTextFieldEmpty() throws {

@@ -1,5 +1,5 @@
 //
-//  FollowerViewModelImpl.swift
+//  FollowerViewModel.swift
 //  GHFollowers
 //
 //  Created by Subhankar  Acharya on 21/07/22.
@@ -7,19 +7,20 @@
 
 import Foundation
 /// Passes the username string to use case layer and callbacks viewcontroller with data
-class FollowerViewModelImpl: IFollowerViewModel {
-
+final class FollowerViewModel: FollowerViewModelProtocol {
+    // MARK: - Properties
     var ghUserName: String
     var outputDelegate: FollowerViewModelOutput?
     var followers: [Follower] = []
+    private let useCase: FollowerUseCaseProtocol
 
-    private let useCase: IFollowerUseCase
-
-    init(useCase: IFollowerUseCase, ghUserName: String) {
+    // MARK: - Initialise
+    init(useCase: FollowerUseCaseProtocol, ghUserName: String) {
         self.useCase = useCase
         self.ghUserName = ghUserName
     }
 
+    // MARK: - Methods
     func fetchFollowers() {
         useCase.getFollowers(for: ghUserName)
             .done(on: .main) { [weak self] model in

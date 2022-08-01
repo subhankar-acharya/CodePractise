@@ -1,5 +1,5 @@
 //
-//  INetworkManager.swift
+//  NetworkManagerProtocol.swift
 //  GHFollowers
 //
 //  Created by Subhankar  Acharya on 21/07/22.
@@ -11,6 +11,6 @@ import PromiseKit
 typealias Response<T> = Promise<T>
 typealias FollowerResponse = Promise<[Follower]>
 
-protocol INetworkManager {
+protocol NetworkManagerProtocol {
     func request<T: Codable>(_ type: T.Type, endPoint: URL) -> Response<T>
 }

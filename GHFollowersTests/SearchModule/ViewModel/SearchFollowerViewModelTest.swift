@@ -11,33 +11,33 @@ import XCTest
 
 class SearchFollowerViewModelTest: XCTestCase {
 
-    var searchViewModel: SearchViewModelImpl?
+    var searchViewModel: SearchViewModel?
     var useCase = MockSearchUseCase()
     var expecatation: XCTestExpectation!
 
     override func setUpWithError() throws {
-        searchViewModel = SearchViewModelImpl(useCase: useCase)
+        searchViewModel = SearchViewModel(useCase: useCase)
         searchViewModel?.outputDelegate = self
         searchViewModel?.inputDelegate = self
     }
 
     func testViewModel_Success() {
-        expecatation = expectation(description: "Success")
+        expecatation = expectation(description: "Success case")
         useCase.validateUser(for: MockSearchData.userName) { result in
             if result {
                 self.searchViewModel?.outputDelegate?.success()
             } else {
-                XCTFail("Failure not expected")
+                XCTFail("Failure not expected in this case.")
             }
         }
         wait(for: [expecatation], timeout: 1.0)
     }
 
-    func testViewModel_Fail() {
-        expecatation = expectation(description: "Should get fail")
+    func testViewModel_Failure() {
+        expecatation = expectation(description: "This should get fail")
         useCase.validateUser(for: MockSearchData.userName) { result in
             if result {
-                XCTFail("Success not expected")
+                XCTFail("Success not expected in this case.")
             } else {
                 self.searchViewModel?.outputDelegate?.errorMessage("Failed Error")
             }

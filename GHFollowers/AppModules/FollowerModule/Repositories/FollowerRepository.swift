@@ -1,5 +1,5 @@
 //
-//  FollowerRepositoryImpl.swift
+//  FollowerRepository.swift
 //  GHFollowers
 //
 //  Created by Subhankar  Acharya on 21/07/22.
@@ -7,11 +7,11 @@
 
 import Foundation
 /// Passes data to service layer and returns back response 
-class FollowerRepositoryImpl: IFollowerRepository {
+class FollowerRepository: FollowerRepositoryProtocol {
 
-    private let service: IFollowerService
+    private let service: FollowerServiceProtocol
 
-    init(service: IFollowerService) {
+    init(service: FollowerServiceProtocol) {
         self.service = service
     }
 

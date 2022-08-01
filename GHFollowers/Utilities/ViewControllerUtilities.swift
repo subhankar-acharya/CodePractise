@@ -5,26 +5,41 @@
 //  Created by Subhankar  Acharya on 21/07/22.
 //
 
-import Foundation
 import UIKit
-/// Utility to initialize the view controller
-enum Storyboard: String {
-    case main = "Main"
+
+protocol StoryboardInstantiation {
+    // MARK: - Properties
+    static var storyboardName: String { get }
+    static var storyboardBundle: Bundle { get }
+    static var storyboardIdentifier: String { get }
+
+    // MARK: - Methods
+    /// return the type conforming to the StoryboardInstantiation protocol
+    static func instantiate() -> Self
 }
 
-protocol ViewControllerUtilities where Self: UIViewController {
-    static func initialize(on storyboard: Storyboard) -> Self
-}
+/// provide default implementations for the computed properties and the instantiate() method
+extension StoryboardInstantiation where Self: UIViewController {
 
-extension ViewControllerUtilities {
+    // MARK: - Properties
+    static var storyboardName: String {
+        return "Main"
+    }
+    static var storyboardBundle: Bundle {
+        return .main
+    }
+    /// returns the name of the class
+    static var storyboardIdentifier: String {
+        return String(describing: self)
+    }
 
-    static func initialize(on storyboard: Storyboard) -> Self {
-        let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
-        guard let controller = storyboard.instantiateViewController(withIdentifier: String(describing: Self.self)) as? Self else {
-            fatalError("Could not find view controller with identifier \(String(describing: Self.self))")
+    // MARK: - Methods
+    static func instantiate() -> Self {
+        guard let viewController = UIStoryboard(name: storyboardName, bundle: storyboardBundle).instantiateViewController(withIdentifier: storyboardIdentifier) as? Self else {
+            fatalError("Unable to Instantiate View Controller With Storyboard Identifier \(storyboardIdentifier)")
         }
-        return controller
+        return viewController
     }
 }
-
-extension UIViewController: ViewControllerUtilities {}
+/// global conformance
+extension UIViewController: StoryboardInstantiation {}

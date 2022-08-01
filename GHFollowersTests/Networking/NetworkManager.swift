@@ -10,7 +10,7 @@ import XCTest
 
 class NetworkManagerTest: XCTestCase {
 
-    var networkManager: INetworkManager!
+    var networkManager: NetworkManagerProtocol!
     let testUrl = URL(string: "TestURL")!
 
     override func setUpWithError() throws {
@@ -20,9 +20,9 @@ class NetworkManagerTest: XCTestCase {
         networkManager = NetworkManger(session: urlSession)
     }
 
-    func test_NetworkClassForSuccess() {
+    func test_NetworkClass_ForSuccess() {
 
-        let expecatation = expectation(description: "Success")
+        let expecatation = expectation(description: "Success case for Network")
 
         MockURLProtocol.requestHandler = { request in
             guard let url = request.url else {
@@ -41,14 +41,14 @@ class NetworkManagerTest: XCTestCase {
                     expecatation.fulfill()
                 }
             }.catch { error in
-                XCTFail("Error was not expected: \(error)")
+                XCTFail("Error was not expected in this case: \(error)")
             }
 
         wait(for: [expecatation], timeout: 1.0)
     }
 
-    func test_ParsingFailure() {
-        let expectation = expectation(description: "Parsing Failure")
+    func test_Parsing_Failure() {
+        let expectation = expectation(description: "Parsing Failure occured")
         // Prepare response
         let data = Data()
         MockURLProtocol.requestHandler = { request in
@@ -58,7 +58,7 @@ class NetworkManagerTest: XCTestCase {
 
         networkManager.request(Follower.self, endPoint: testUrl)
             .done { model in
-                XCTFail("Success response was not expected.")
+                XCTFail("Success response was not expected in this case.")
             }.catch { error in
                 expectation.fulfill()
             }

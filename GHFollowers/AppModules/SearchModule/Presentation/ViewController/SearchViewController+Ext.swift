@@ -7,26 +7,6 @@
 
 import UIKit
 
-extension SearchViewController: SearchViewModelInput {
-    func getUserName() -> String {
-        return userNameTextField.text ?? ""
-    }
-}
-
-extension SearchViewController: SearchViewModelOutput {
-
-    func success() {
-        let module = FollowerModule(ghUserName: userNameTextField.text!)
-        let followerListViewController = module.createFollowerListViewController()
-        followerListViewController.view.accessibilityIdentifier = "FollowerListViewController"
-        self.navigationController?.pushViewController(followerListViewController, animated: true)
-    }
-
-    func errorMessage(_ error: String) {
-        showAlert(message: error, on: self)
-    }
-}
-
 extension SearchViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         fetchFollowers()
@@ -39,3 +19,24 @@ extension SearchViewController: Alertable {
         viewModel?.pushFollowerListVC()
     }
 }
+
+extension SearchViewController: SearchViewModelInput {
+    func getUserName() -> String {
+        return userNameTextField.text ?? ""
+    }
+}
+
+extension SearchViewController: SearchViewModelOutput {
+
+    func success() {
+        let module = FollowerModule(ghUserName: userNameTextField.text ?? "")
+        let followerListViewController = module.createFollowerListViewController()
+        followerListViewController.view.accessibilityIdentifier = Constants.AccessiblityIdentifier.identifier
+        self.navigationController?.pushViewController(followerListViewController, animated: true)
+    }
+
+    func errorMessage(_ error: String) {
+        showAlert(message: error, on: self)
+    }
+}
+
