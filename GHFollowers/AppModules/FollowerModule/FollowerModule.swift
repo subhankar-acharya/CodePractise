@@ -22,7 +22,7 @@ final class FollowerModule {
     // MARK: - Methods
     //setting up Follower View Controller
     func createFollowerListViewController() -> UIViewController {
-        let viewController = FollowerListViewController.instantiate()
+        let viewController = FollowerListViewController.init(nibName: Constants.NibName.identifier, bundle: nil)
         viewController.viewModel = createFollowerViewModel()
         viewController.viewModel?.outputDelegate = viewController
         return viewController

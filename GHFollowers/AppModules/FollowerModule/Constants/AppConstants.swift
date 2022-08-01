@@ -29,4 +29,8 @@ struct Constants {
     struct AccessiblityIdentifier {
         static let identifier = "FollowerListViewController"
     }
+
+    struct NibName {
+        static let identifier = "FollowerListViewController"
+    }
 }
