@@ -8,6 +8,7 @@
 import UIKit
 /// Setting up the Search module and global network variable to provide it to module which requires it in future.
 /// Test username: twostraws
+
 final class AppContainer {
     
     lazy var networkManager: NetworkManagerProtocol = {
