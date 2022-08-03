@@ -30,7 +30,8 @@ extension SearchViewController: SearchViewModelInput {
 extension SearchViewController: SearchViewModelOutput {
 
     func success() {
-        let module = FollowerModule(ghUserName: userNameTextField.text ?? "")
+        let userName = userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let module = FollowerModule(ghUserName: userName)
         let followerListViewController = module.createFollowerListViewController()
         followerListViewController.view.accessibilityIdentifier = Constants.AccessiblityIdentifier.identifier
         self.navigationController?.pushViewController(followerListViewController, animated: true)
