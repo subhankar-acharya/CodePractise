@@ -17,26 +17,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gh-logo" translatesAutoresizingMaskIntoConstraints="NO" id="f70-QT-Luf">
-                                <rect key="frame" x="82" y="144" width="250" height="250"/>
+                                <rect key="frame" x="107" y="164" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="JqZ-Bq-cgR"/>
-                                    <constraint firstAttribute="height" constant="250" id="RTM-XW-R4c"/>
+                                    <constraint firstAttribute="width" constant="200" id="JqZ-Bq-cgR"/>
+                                    <constraint firstAttribute="height" constant="200" id="RTM-XW-R4c"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dug-gZ-XQJ">
-                                <rect key="frame" x="35" y="444" width="344" height="44"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a username" textAlignment="center" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dug-gZ-XQJ">
+                                <rect key="frame" x="35" y="412" width="344" height="50"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="enterUserTextField"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="tl1-lL-DEv"/>
+                                    <constraint firstAttribute="height" constant="50" id="tl1-lL-DEv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="systemGray4Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cQW-Q3-faN"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dam-u3-HHj">
-                                <rect key="frame" x="50" y="712" width="314" height="50"/>
+                                <rect key="frame" x="50" y="512" width="314" height="50"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="getFollowersButton"/>
                                 <constraints>
@@ -59,11 +71,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dam-u3-HHj" secondAttribute="trailing" constant="50" id="3qD-rQ-U4C"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dug-gZ-XQJ" secondAttribute="trailing" constant="35" id="DmJ-go-ZAN"/>
                             <constraint firstItem="f70-QT-Luf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FWs-Ok-PQw"/>
+                            <constraint firstItem="dam-u3-HHj" firstAttribute="top" secondItem="Dug-gZ-XQJ" secondAttribute="bottom" constant="50" id="K55-Oo-3iY"/>
                             <constraint firstItem="dam-u3-HHj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="aF5-P3-Utc"/>
                             <constraint firstItem="Dug-gZ-XQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="jSU-aC-QS8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dam-u3-HHj" secondAttribute="bottom" constant="100" id="oNs-Dd-GeZ"/>
-                            <constraint firstItem="f70-QT-Luf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="suO-76-XUh"/>
-                            <constraint firstItem="Dug-gZ-XQJ" firstAttribute="top" secondItem="f70-QT-Luf" secondAttribute="bottom" constant="50" id="wlW-pV-a0X"/>
+                            <constraint firstItem="f70-QT-Luf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="suO-76-XUh"/>
+                            <constraint firstItem="Dug-gZ-XQJ" firstAttribute="top" secondItem="f70-QT-Luf" secondAttribute="bottom" constant="48" id="wlW-pV-a0X"/>
                         </constraints>
                     </view>
                     <connections>
@@ -81,8 +93,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

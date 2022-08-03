@@ -10,7 +10,7 @@ import UIKit
 struct Constants {
 
     struct UserAPIEndpoint {
-        static let baseURL = "https://api.github.com/users/"
+        static let baseURL = "https://run.mocky.io/v3/"
     }
 
     struct Title {

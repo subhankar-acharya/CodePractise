@@ -17,6 +17,7 @@ extension SearchViewController : UITextFieldDelegate {
 extension SearchViewController: Alertable {
      func fetchFollowers() {
         viewModel?.pushFollowerListVC()
+        userNameTextField.resignFirstResponder()
     }
 }
 
