@@ -9,14 +9,18 @@ import UIKit
 
 class FollowerDetailViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var detailNameLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
+
+    // MARK: - Properties
     var viewModel: DetailViewModelProtocol?
     private enum Constants {
         static let screenTitle = "Follower"
     }
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constants.screenTitle
@@ -30,12 +34,15 @@ class FollowerDetailViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
     }
 
+    // MARK: - Methods
     func showFollowerDetail() {
         if let follower = viewModel?.follower {
             detailNameLabel.text = follower.username
             detailImageView.downloadImage(from: follower.avatarUrl)
         }
     }
+
+    // MARK: - Actions
     @IBAction func didTapProfile(_ sender: Any) {
         loadSafariVC()
     }

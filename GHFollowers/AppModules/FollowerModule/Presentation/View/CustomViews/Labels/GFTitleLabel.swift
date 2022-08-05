@@ -9,6 +9,9 @@ import UIKit
 
 class GFTitleLabel: UILabel {
 
+    private enum Constants {
+        static let minScaleFactor: CGFloat = 0.9
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
@@ -28,7 +31,7 @@ class GFTitleLabel: UILabel {
     private func configure() {
         textColor = .label
         adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.9
+        minimumScaleFactor = Constants.minScaleFactor
         lineBreakMode = .byTruncatingTail
         translatesAutoresizingMaskIntoConstraints = false
     }
