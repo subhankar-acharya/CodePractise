@@ -1,6 +1,6 @@
 //
-//  SearchFlowUITests.swift
-//  SearchFlowUITests
+//  FlowUITests.swift
+//  FlowUITests
 //
 //  Created by Subhankar Acharya on 24/07/22.
 //

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 /// Makes network call after preparing url
 class FollowerService: FollowerServiceProtocol {
 
@@ -17,9 +18,10 @@ class FollowerService: FollowerServiceProtocol {
     
     func makeNetworkRequest() -> FollowerResponse {
         let endPoint = AppConstants.UserAPIEndpoint.baseURL
-        let url = URL(string: endPoint)!
-        let promise = network.request([Follower].self, endPoint: url)
-        return promise
+        let url = URL(string: endPoint)
+        guard let url = url else { return Promise.value([]) }
+        let followerResponse = network.request([Follower].self, endPoint: url)
+        return followerResponse
     }
 }
 

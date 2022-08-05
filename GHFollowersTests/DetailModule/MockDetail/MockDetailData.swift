@@ -14,7 +14,7 @@ struct MockDetailData {
 
 extension MockDetailData {
     static func mockDictionary() -> Data {
-        let encoded = try! JSONEncoder().encode(follower)
-        return encoded
+        let encoded = try? JSONEncoder().encode(follower)
+        return encoded ?? Data()
     }
 }

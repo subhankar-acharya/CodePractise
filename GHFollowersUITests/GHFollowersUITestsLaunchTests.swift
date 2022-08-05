@@ -1,6 +1,6 @@
 //
 //  GHFollowersUITestsLaunchTests.swift
-//  SearchFlowUITests
+//  FlowUITests
 //
 //  Created by Subhankar Acharya on 24/07/22.
 //

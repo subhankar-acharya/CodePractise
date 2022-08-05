@@ -10,8 +10,8 @@ import XCTest
 
 class NetworkManagerTest: XCTestCase {
 
-    var networkManager: NetworkManagerProtocol!
-    let testUrl = URL(string: "TestURL")!
+    var networkManager: NetworkManagerProtocol?
+    let testUrl = URL(string: "TestURL")
 
     override func setUpWithError() throws {
         let configuration = URLSessionConfiguration.default
@@ -29,10 +29,13 @@ class NetworkManagerTest: XCTestCase {
                 throw NSError(domain: "URL", code: NSURLErrorBadURL, userInfo: nil)
             }
 
-            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+
+            guard let response = response else { return (HTTPURLResponse(),Data()) }
             return (response, MockFollowersData.mockDictionary())
         }
-
+        guard let testUrl = testUrl,
+              let networkManager = networkManager else { return }
         networkManager.request([Follower].self, endPoint: testUrl)
             .done { model in
                 let followerCount = model.count
@@ -52,10 +55,16 @@ class NetworkManagerTest: XCTestCase {
         // Prepare response
         let data = Data()
         MockURLProtocol.requestHandler = { request in
-          let response = HTTPURLResponse(url: request.url!, statusCode: 400, httpVersion: nil, headerFields: nil)!
-          return (response, data)
+            guard let url = request.url else {
+                throw NSError(domain: "URL", code: NSURLErrorBadURL, userInfo: nil)
+            }
+            let response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)
+            guard let response = response else { return (HTTPURLResponse(),Data()) }
+            return (response, data)
         }
 
+        guard let testUrl = testUrl,
+              let networkManager = networkManager else { return }
         networkManager.request(Follower.self, endPoint: testUrl)
             .done { model in
                 XCTFail("Success response was not expected in this case.")
@@ -64,5 +73,5 @@ class NetworkManagerTest: XCTestCase {
             }
 
         wait(for: [expectation], timeout: 1.0)
-      }
+    }
 }

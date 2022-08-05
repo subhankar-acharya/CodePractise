@@ -223,6 +223,7 @@
 		8FD861C2288D0D6D0065B214 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				8FD86201288D36350065B214 /* Networking */,
 				8FD861F3288D2FAA0065B214 /* Application */,
 				8FD861F6288D30040065B214 /* AppModules */,
 				8FD8627F288D4BD70065B214 /* Constants */,
@@ -306,9 +307,7 @@
 				8FD8627D288D4BD70065B214 /* FollowerModule.swift */,
 				8FD8628D288D4BD70065B214 /* Presentation */,
 				8FD86287288D4BD70065B214 /* Domain */,
-				8FD86281288D4BD70065B214 /* Repositories */,
-				8FD86284288D4BD70065B214 /* Services */,
-				8FD86201288D36350065B214 /* Networking */,
+				9E99B6BC289D482100B97F49 /* Data */,
 			);
 			name = FollowerModule;
 			path = GHFollowers/AppModules/FollowerModule;
@@ -473,6 +472,15 @@
 				9E99B6BA289D118F00B97F49 /* MockDetailViewModelTest.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9E99B6BC289D482100B97F49 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8FD86281288D4BD70065B214 /* Repositories */,
+				8FD86284288D4BD70065B214 /* Services */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		9E9C693C288ED55E003181AE /* Networking */ = {

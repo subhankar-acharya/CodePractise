@@ -1,5 +1,5 @@
 //
-//  UserModule.swift
+//  FollowerModule.swift
 //  GHFollowers
 //
 //  Created by Subhankar Acharya on 21/07/22.

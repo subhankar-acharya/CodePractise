@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Injecting all the required layers of clean architecture for Search module.
+/// Injecting all the required layers of clean architecture for Detail module.
 final class DetailModule {
 
     var follower: Follower
@@ -16,7 +16,7 @@ final class DetailModule {
         self.follower = follower
     }
 
-    //setting up Search View Controller
+    //setting up Detail View Controller
     func createFollowerDetailViewController() -> UIViewController {
         let viewController = FollowerDetailViewController.instantiate()
         viewController.viewModel = createDetailViewModel()
