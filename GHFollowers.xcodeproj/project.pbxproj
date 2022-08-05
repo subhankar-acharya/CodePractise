@@ -38,6 +38,9 @@
 		9E990AA52897B4950043BCA8 /* ErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E990AA42897B4950043BCA8 /* ErrorConstants.swift */; };
 		9E99B6B0289CB4CC00B97F49 /* DetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6AF289CB4CC00B97F49 /* DetailUseCase.swift */; };
 		9E99B6B2289CB4DF00B97F49 /* DetailUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6B1289CB4DF00B97F49 /* DetailUseCaseProtocol.swift */; };
+		9E99B6B5289D105400B97F49 /* MockDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6B4289D105400B97F49 /* MockDetailData.swift */; };
+		9E99B6B8289D10F100B97F49 /* MockDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6B7289D10F100B97F49 /* MockDetailUseCase.swift */; };
+		9E99B6BB289D118F00B97F49 /* MockDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6BA289D118F00B97F49 /* MockDetailViewModelTest.swift */; };
 		9E9C6939288E9FEF003181AE /* FollowerListViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C6938288E9FEF003181AE /* FollowerListViewController+Ext.swift */; };
 		9E9C693B288EAC07003181AE /* GFAvatarImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C693A288EAC07003181AE /* GFAvatarImageView+Ext.swift */; };
 		9E9C693E288ED586003181AE /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C693D288ED586003181AE /* MockURLProtocol.swift */; };
@@ -125,6 +128,9 @@
 		9E990AA42897B4950043BCA8 /* ErrorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConstants.swift; sourceTree = "<group>"; };
 		9E99B6AF289CB4CC00B97F49 /* DetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCase.swift; sourceTree = "<group>"; };
 		9E99B6B1289CB4DF00B97F49 /* DetailUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseProtocol.swift; sourceTree = "<group>"; };
+		9E99B6B4289D105400B97F49 /* MockDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailData.swift; sourceTree = "<group>"; };
+		9E99B6B7289D10F100B97F49 /* MockDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailUseCase.swift; sourceTree = "<group>"; };
+		9E99B6BA289D118F00B97F49 /* MockDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailViewModelTest.swift; sourceTree = "<group>"; };
 		9E9C6938288E9FEF003181AE /* FollowerListViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FollowerListViewController+Ext.swift"; sourceTree = "<group>"; };
 		9E9C693A288EAC07003181AE /* GFAvatarImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GFAvatarImageView+Ext.swift"; sourceTree = "<group>"; };
 		9E9C693D288ED586003181AE /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 				9EBC7725288FD23600638A08 /* ViewControllers */,
 				9E9C693C288ED55E003181AE /* Networking */,
 				9E9C6944288EDA05003181AE /* FollowerModule */,
+				9E99B6B3289D102800B97F49 /* DetailModule */,
 				9E9C693F288ED712003181AE /* Resource */,
 			);
 			path = GHFollowersTests;
@@ -440,6 +447,32 @@
 				9E99B6AF289CB4CC00B97F49 /* DetailUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		9E99B6B3289D102800B97F49 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				9E99B6B6289D106000B97F49 /* MockDetail */,
+				9E99B6B9289D116600B97F49 /* ViewModel */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		9E99B6B6289D106000B97F49 /* MockDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9E99B6B4289D105400B97F49 /* MockDetailData.swift */,
+				9E99B6B7289D10F100B97F49 /* MockDetailUseCase.swift */,
+			);
+			path = MockDetail;
+			sourceTree = "<group>";
+		};
+		9E99B6B9289D116600B97F49 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E99B6BA289D118F00B97F49 /* MockDetailViewModelTest.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9E9C693C288ED55E003181AE /* Networking */ = {
@@ -874,13 +907,16 @@
 				9E9C6946288EDA1D003181AE /* MockFollowersData.swift in Sources */,
 				9E9C693E288ED586003181AE /* MockURLProtocol.swift in Sources */,
 				9E9C6956288EDEA1003181AE /* MockFollowersNetworkManager.swift in Sources */,
+				9E99B6BB289D118F00B97F49 /* MockDetailViewModelTest.swift in Sources */,
 				9E9C695C288EDFFF003181AE /* FollowerServiceTest.swift in Sources */,
 				9E9C694D288EDBC3003181AE /* FollowerViewModelTest.swift in Sources */,
 				9E9C6954288EDDB3003181AE /* MockFollowersService.swift in Sources */,
+				9E99B6B5289D105400B97F49 /* MockDetailData.swift in Sources */,
 				9E9C695A288EDEF3003181AE /* MockFollowersRepository.swift in Sources */,
 				9EBC7724288FBA3E00638A08 /* FollowerDetailViewControllerTests.swift in Sources */,
 				9E9C6958288EDEE4003181AE /* MockFollowersUseCase.swift in Sources */,
 				9E9C695E288EE12B003181AE /* FollowerRepositoryTest.swift in Sources */,
+				9E99B6B8289D10F100B97F49 /* MockDetailUseCase.swift in Sources */,
 				9E9C6960288EE20E003181AE /* FollowerUseCaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
