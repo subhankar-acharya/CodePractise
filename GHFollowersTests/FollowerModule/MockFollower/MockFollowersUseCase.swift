@@ -14,7 +14,7 @@ class MockFollowersUseCase: FollowerUseCaseProtocol {
     var follower: [Follower]?
     var error: Error?
 
-    func getFollowers(for userName: String) -> FollowerResponse {
+    func getFollowers() -> FollowerResponse {
         return Promise { seal in
             if let error = error {
                 seal.reject(error)

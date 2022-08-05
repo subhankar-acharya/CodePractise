@@ -20,7 +20,7 @@ class FollowerServiceTest: XCTestCase {
     func testService_Success() {
         let expecatation = expectation(description: "Success")
         mockNetworkManager.follower = MockFollowersData.follower
-        followerService.makeNetworkRequest(for: "TestUser")
+        followerService.makeNetworkRequest()
             .done { model in
                 let followerCount = model.count
                 if followerCount >= 1 {
@@ -36,7 +36,7 @@ class FollowerServiceTest: XCTestCase {
     func testService_Error() {
         let expecatation = expectation(description: "Follower service on success case")
         mockNetworkManager.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kServiceFailedErrorMeesage])
-        followerService.makeNetworkRequest(for: "TestUser")
+        followerService.makeNetworkRequest()
             .catch { _ in
                 expecatation.fulfill()
             }

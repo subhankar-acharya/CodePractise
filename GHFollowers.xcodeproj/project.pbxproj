@@ -53,7 +53,6 @@
 		9E9C695E288EE12B003181AE /* FollowerRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C695D288EE12B003181AE /* FollowerRepositoryTest.swift */; };
 		9E9C6960288EE20E003181AE /* FollowerUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9C695F288EE20E003181AE /* FollowerUseCaseTest.swift */; };
 		9EBC7724288FBA3E00638A08 /* FollowerDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC7723288FBA3E00638A08 /* FollowerDetailViewControllerTests.swift */; };
-		9EBC7727288FD27E00638A08 /* ViewControllerNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC7726288FD27E00638A08 /* ViewControllerNavigationTests.swift */; };
 		9EC3DB76289C0D9300D9C6F6 /* DetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3DB75289C0D9300D9C6F6 /* DetailModule.swift */; };
 		9EC3DB7D289C112400D9C6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC3DB7C289C112400D9C6F6 /* Main.storyboard */; };
 		9EC3DB7F289C19AC00D9C6F6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC3DB7E289C19AC00D9C6F6 /* DetailViewModel.swift */; };
@@ -141,7 +140,6 @@
 		9E9C695D288EE12B003181AE /* FollowerRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerRepositoryTest.swift; sourceTree = "<group>"; };
 		9E9C695F288EE20E003181AE /* FollowerUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerUseCaseTest.swift; sourceTree = "<group>"; };
 		9EBC7723288FBA3E00638A08 /* FollowerDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDetailViewControllerTests.swift; sourceTree = "<group>"; };
-		9EBC7726288FD27E00638A08 /* ViewControllerNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNavigationTests.swift; sourceTree = "<group>"; };
 		9EC3DB75289C0D9300D9C6F6 /* DetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModule.swift; sourceTree = "<group>"; };
 		9EC3DB7C289C112400D9C6F6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9EC3DB7E289C19AC00D9C6F6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -529,7 +527,6 @@
 			isa = PBXGroup;
 			children = (
 				9EBC7723288FBA3E00638A08 /* FollowerDetailViewControllerTests.swift */,
-				9EBC7726288FD27E00638A08 /* ViewControllerNavigationTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -873,7 +870,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EBC7727288FD27E00638A08 /* ViewControllerNavigationTests.swift in Sources */,
 				9E9C6943288ED81E003181AE /* NetworkManager.swift in Sources */,
 				9E9C6946288EDA1D003181AE /* MockFollowersData.swift in Sources */,
 				9E9C693E288ED586003181AE /* MockURLProtocol.swift in Sources */,

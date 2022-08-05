@@ -14,7 +14,7 @@ class MockFollowersService: FollowerServiceProtocol {
     var follower: [Follower]?
     var error: Error?
 
-    func makeNetworkRequest(for userName: String) -> FollowerResponse {
+    func makeNetworkRequest() -> FollowerResponse {
         return Promise { seal in
             if let error = error {
                 seal.reject(error)

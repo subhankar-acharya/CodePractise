@@ -22,7 +22,7 @@ class FollowerUseCaseTest: XCTestCase {
 
         repository.follower = MockFollowersData.follower
 
-        useCase.getFollowers(for: "Test User")
+        useCase.getFollowers()
             .done { model in
                 let followerCount = model.count
                 if followerCount >= 1 {
@@ -38,7 +38,7 @@ class FollowerUseCaseTest: XCTestCase {
         let expecatation = expectation(description: "Failure")
         repository.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kUseCaseFailedErrorMessage])
 
-        useCase.getFollowers(for: "Test User")
+        useCase.getFollowers()
             .catch { error in
                 XCTAssertTrue(error.localizedDescription == ErrorMessage.kUseCaseFailedErrorMessage)
                 expecatation.fulfill()

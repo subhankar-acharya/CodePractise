@@ -14,7 +14,7 @@ class MockFollowersRepository: FollowerRepositoryProtocol {
     var follower: [Follower]?
     var error: Error?
 
-    func makeServiceCallToGetFollowers(for userName: String) -> FollowerResponse {
+    func makeServiceCallToGetFollowers() -> FollowerResponse {
         return Promise { seal in
             if let error = error {
                 seal.reject(error)

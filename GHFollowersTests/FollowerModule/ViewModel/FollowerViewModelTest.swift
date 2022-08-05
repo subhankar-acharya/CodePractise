@@ -15,7 +15,7 @@ class UserViewModelTest: XCTestCase {
     var expecatation: XCTestExpectation!
 
     override func setUpWithError() throws {
-        followerViewModel = FollowerViewModel(useCase: useCase, ghUserName: "Test User")
+        followerViewModel = FollowerViewModel(useCase: useCase)
         followerViewModel?.outputDelegate = self
     }
 
