@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FollowerServiceProtocol {
-    func makeNetworkRequest(for userName: String) -> FollowerResponse
+    func makeNetworkRequest() -> FollowerResponse
 }

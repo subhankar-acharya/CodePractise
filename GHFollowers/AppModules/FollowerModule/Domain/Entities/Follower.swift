@@ -10,4 +10,6 @@ import Foundation
 struct Follower: Codable, Hashable {
     var login: String
     var avatarUrl: String
+    var username: String
+    var htmlUrl: String
 }

@@ -9,20 +9,18 @@ import Foundation
 /// Passes the username string to use case layer and callbacks viewcontroller with data
 final class FollowerViewModel: FollowerViewModelProtocol {
     // MARK: - Properties
-    var ghUserName: String
-    var outputDelegate: FollowerViewModelOutput?
+    weak var outputDelegate: FollowerViewModelOutput?
     var followers: [Follower] = []
     private let useCase: FollowerUseCaseProtocol
 
     // MARK: - Initialise
-    init(useCase: FollowerUseCaseProtocol, ghUserName: String) {
+    init(useCase: FollowerUseCaseProtocol) {
         self.useCase = useCase
-        self.ghUserName = ghUserName
     }
 
     // MARK: - Methods
     func fetchFollowers() {
-        useCase.getFollowers(for: ghUserName)
+        useCase.getFollowers()
             .done(on: .main) { [weak self] model in
                 self?.getData(model: model)
             }

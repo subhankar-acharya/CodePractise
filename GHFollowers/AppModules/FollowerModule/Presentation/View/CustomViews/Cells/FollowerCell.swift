@@ -9,9 +9,17 @@ import UIKit
 
 class FollowerCell: UITableViewCell {
 
-    static let reuseID = Constants.Cell.followerCellID
+    enum Constants {
+        static let reuseID = "FollowerCell"
+        static let padding: CGFloat = 14
+        static let fontSize: CGFloat = 16
+        static let imageViewPadding: CGFloat = 60
+        static let nameLabelPadding: CGFloat = 30
+        static let nameLabelHeight: CGFloat = 40
+    }
+
     let avatarImageView = GFAvatarImageView(frame: .zero)
-    let usernameLabel = GFTitleLabel(textAlignment: .right, fontSize: 16)
+    let usernameLabel = GFTitleLabel(textAlignment: .center, fontSize: Constants.fontSize)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,19 +38,17 @@ class FollowerCell: UITableViewCell {
     private func configure() {
         addSubview(avatarImageView)
         addSubview(usernameLabel)
-
-        let padding: CGFloat = 14
-
+        accessoryType = .disclosureIndicator
         NSLayoutConstraint.activate([
             avatarImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 60),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 60),
+            avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.padding),
+            avatarImageView.heightAnchor.constraint(equalToConstant: Constants.imageViewPadding),
+            avatarImageView.widthAnchor.constraint(equalToConstant: Constants.imageViewPadding),
 
             usernameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 32),
-            usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            usernameLabel.heightAnchor.constraint(equalToConstant: 40)
+            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Constants.nameLabelPadding),
+            usernameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constants.padding),
+            usernameLabel.heightAnchor.constraint(equalToConstant: Constants.nameLabelHeight)
         ])
     }
 }

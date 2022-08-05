@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FollowerRepositoryProtocol {
-    func makeServiceCallToGetFollowers(for userName: String) -> FollowerResponse
+    func makeServiceCallToGetFollowers() -> FollowerResponse
 }

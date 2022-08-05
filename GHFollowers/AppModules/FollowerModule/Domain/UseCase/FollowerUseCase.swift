@@ -15,7 +15,7 @@ class FollowerUseCase: FollowerUseCaseProtocol {
         self.repository = repository
     }
 
-    func getFollowers(for userName: String) -> FollowerResponse {
-        return repository.makeServiceCallToGetFollowers(for: userName)
+    func getFollowers() -> FollowerResponse {
+        return repository.makeServiceCallToGetFollowers()
     }
 }

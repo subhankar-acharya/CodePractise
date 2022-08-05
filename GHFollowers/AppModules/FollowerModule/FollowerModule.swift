@@ -11,25 +11,26 @@ final class FollowerModule {
 
     // MARK: - Properties
     private let networkManager: NetworkManagerProtocol
-    private let ghUserName:String
+    private enum Constants {
+        static let nibName = "FollowerListViewController"
+    }
 
     // MARK: - Initialise
-    init(ghUserName:String) {
-        self.networkManager = AppContainer().networkManager
-        self.ghUserName = ghUserName
+    init(networkManager:NetworkManagerProtocol) {
+        self.networkManager = networkManager
     }
 
     // MARK: - Methods
     //setting up Follower View Controller
     func createFollowerListViewController() -> UIViewController {
-        let viewController = FollowerListViewController.init(nibName: Constants.NibName.identifier, bundle: nil)
+        let viewController = FollowerListViewController.init(nibName: Constants.nibName, bundle: nil)
         viewController.viewModel = createFollowerViewModel()
         viewController.viewModel?.outputDelegate = viewController
         return viewController
     }
     //injecting use case layer
     private func createFollowerViewModel() -> FollowerViewModelProtocol {
-        let viewModel = FollowerViewModel(useCase: createFollowerUseCase(), ghUserName: self.ghUserName)
+        let viewModel = FollowerViewModel(useCase: createFollowerUseCase())
         return viewModel
     }
     //injecting repository layer

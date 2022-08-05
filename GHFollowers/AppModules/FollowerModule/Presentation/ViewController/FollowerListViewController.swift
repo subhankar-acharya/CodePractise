@@ -10,6 +10,9 @@ import UIKit
 final class FollowerListViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
+    private enum Constants {
+        static let screenTitle = "Followers"
+    }
 
     // MARK: - Property
     var viewModel: FollowerViewModelProtocol?
@@ -17,7 +20,8 @@ final class FollowerListViewController: UIViewController {
     // MARK: - Viewcontroller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Constants.Title.followerViewController
+        self.title =  Constants.screenTitle
+        view.accessibilityIdentifier = Constants.screenTitle
         fetchFollowers()
         configure()
     }
@@ -29,8 +33,8 @@ final class FollowerListViewController: UIViewController {
 
     // MARK: - Method
     func configure() {
-        tableView.register(FollowerCell.self, forCellReuseIdentifier: FollowerCell.reuseID)
-        navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(FollowerCell.self, forCellReuseIdentifier: FollowerCell.Constants.reuseID)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
 

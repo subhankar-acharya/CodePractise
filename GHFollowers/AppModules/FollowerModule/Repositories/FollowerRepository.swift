@@ -15,7 +15,7 @@ class FollowerRepository: FollowerRepositoryProtocol {
         self.service = service
     }
 
-    func makeServiceCallToGetFollowers(for userName: String) -> FollowerResponse {
-        return service.makeNetworkRequest(for: userName)
+    func makeServiceCallToGetFollowers() -> FollowerResponse {
+        return service.makeNetworkRequest()
     }
 }

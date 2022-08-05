@@ -6,9 +6,7 @@
 //
 
 import UIKit
-/// Setting up the Search module and global network variable to provide it to module which requires it in future.
-/// Test username: twostraws
-
+/// Setting up the Follower module and global network variable to provide it to module which requires it in future.
 final class AppContainer {
     
     lazy var networkManager: NetworkManagerProtocol = {
@@ -17,8 +15,8 @@ final class AppContainer {
     }()
 
     func startApp(on window: UIWindow?) {
-        let module = SearchModule()
-        let controller = module.createSearchViewController()
+        let module = FollowerModule(networkManager: networkManager)
+        let controller = module.createFollowerListViewController()
         let navigationController: UINavigationController = UINavigationController(rootViewController: controller)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

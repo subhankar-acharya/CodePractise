@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FollowerViewModelOutput {
+protocol FollowerViewModelOutput: AnyObject {
     func success()
     func errorMessage(_ error: String)
 }

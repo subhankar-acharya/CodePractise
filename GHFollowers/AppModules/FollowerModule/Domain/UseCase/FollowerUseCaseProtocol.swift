@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FollowerUseCaseProtocol {
-    func getFollowers(for userName: String) -> FollowerResponse
+    func getFollowers() -> FollowerResponse
 }

@@ -15,8 +15,8 @@ class FollowerService: FollowerServiceProtocol {
         self.network = network
     }
     
-    func makeNetworkRequest(for userName: String) -> FollowerResponse {
-        let endPoint = Constants.UserAPIEndpoint.baseURL + "db5cb384-098e-4893-b44d-9816bf849321/followers?username=\(userName)"
+    func makeNetworkRequest() -> FollowerResponse {
+        let endPoint = AppConstants.UserAPIEndpoint.baseURL
         let url = URL(string: endPoint)!
         let promise = network.request([Follower].self, endPoint: url)
         return promise

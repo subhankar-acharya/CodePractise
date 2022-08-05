@@ -9,7 +9,6 @@ import Foundation
 
 protocol FollowerViewModelProtocol {
     var followers: [Follower] { get }
-    var ghUserName: String { get set }
     func fetchFollowers() 
     var outputDelegate: FollowerViewModelOutput? { get set }
 }
