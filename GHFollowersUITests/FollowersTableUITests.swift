@@ -35,7 +35,6 @@ class FollowersTableUITests: XCTestCase {
         let app2 = app
         app2/*@START_MENU_TOKEN@*/.staticTexts["Profile"]/*[[".otherElements[\"Follower\"]",".buttons[\"Profile\"].staticTexts[\"Profile\"]",".buttons[\"didTapProfile\"].staticTexts[\"Profile\"]",".staticTexts[\"Profile\"]"],[[[-1,3],[-1,2],[-1,1],[-1,0,1]],[[-1,3],[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         app2/*@START_MENU_TOKEN@*/.otherElements["URL"]/*[[".otherElements[\"BrowserView?WebViewProcessID=14957\"]",".otherElements[\"TopBrowserBar\"]",".buttons[\"Address\"]",".otherElements[\"Address\"]",".otherElements[\"URL\"]",".buttons[\"URL\"]"],[[[-1,4],[-1,3],[-1,5,3],[-1,2,3],[-1,1,2],[-1,0,1]],[[-1,4],[-1,3],[-1,5,3],[-1,2,3],[-1,1,2]],[[-1,4],[-1,3],[-1,5,3],[-1,2,3]],[[-1,4],[-1,3]]],[0]]@END_MENU_TOKEN@*/.tap()
-        //let followersButtonCheck = app2.navigationBars["Follower"].buttons["Followers"]
     }
 
     func testFollowersTableView() {
