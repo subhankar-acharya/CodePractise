@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3208D7B7289E91DE00203919 /* FollowersTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208D7B6289E91DE00203919 /* FollowersTableUITests.swift */; };
 		8FD861C4288D0D6D0065B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861C3288D0D6D0065B214 /* AppDelegate.swift */; };
 		8FD861C6288D0D6D0065B214 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861C5288D0D6D0065B214 /* SceneDelegate.swift */; };
 		8FD861CD288D0D6E0065B214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD861CC288D0D6E0065B214 /* Assets.xcassets */; };
 		8FD861D0288D0D6E0065B214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD861CE288D0D6E0065B214 /* LaunchScreen.storyboard */; };
-		8FD861E5288D0D6E0065B214 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861E4288D0D6E0065B214 /* UITests.swift */; };
 		8FD861E7288D0D6E0065B214 /* GHFollowersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861E6288D0D6E0065B214 /* GHFollowersUITestsLaunchTests.swift */; };
 		8FD861F5288D2FCD0065B214 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861F4288D2FCD0065B214 /* AppContainer.swift */; };
 		8FD86207288D366A0065B214 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD86203288D366A0065B214 /* NetworkManger.swift */; };
@@ -91,6 +91,7 @@
 		15E975513C27E989DB9E0FD4 /* Pods-GHFollowersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowersTests.debug.xcconfig"; path = "Target Support Files/Pods-GHFollowersTests/Pods-GHFollowersTests.debug.xcconfig"; sourceTree = "<group>"; };
 		202802F2B92D4228A14FE93B /* Pods-GHFollowers-GHFollowersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowers-GHFollowersUITests.release.xcconfig"; path = "Target Support Files/Pods-GHFollowers-GHFollowersUITests/Pods-GHFollowers-GHFollowersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2D156465EFFF71F8578275D7 /* Pods_GHFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3208D7B6289E91DE00203919 /* FollowersTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableUITests.swift; sourceTree = "<group>"; };
 		4C0298005B98D0AFA1D16446 /* Pods_GHFollowersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625F4BDB3E0E0C908F7D73D7 /* Pods-GHFollowers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowers.release.xcconfig"; path = "Target Support Files/Pods-GHFollowers/Pods-GHFollowers.release.xcconfig"; sourceTree = "<group>"; };
 		8FD861C0288D0D6D0065B214 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,7 +102,6 @@
 		8FD861D1288D0D6E0065B214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FD861D6288D0D6E0065B214 /* GHFollowersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHFollowersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD861E0288D0D6E0065B214 /* GHFollowersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHFollowersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FD861E4288D0D6E0065B214 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		8FD861E6288D0D6E0065B214 /* GHFollowersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowersUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8FD861F4288D2FCD0065B214 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		8FD86203288D366A0065B214 /* NetworkManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 		8FD861E3288D0D6E0065B214 /* GHFollowersUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8FD861E4288D0D6E0065B214 /* UITests.swift */,
+				3208D7B6289E91DE00203919 /* FollowersTableUITests.swift */,
 				8FD861E6288D0D6E0065B214 /* GHFollowersUITestsLaunchTests.swift */,
 			);
 			path = GHFollowersUITests;
@@ -933,7 +933,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FD861E5288D0D6E0065B214 /* UITests.swift in Sources */,
+				3208D7B7289E91DE00203919 /* FollowersTableUITests.swift in Sources */,
 				8FD861E7288D0D6E0065B214 /* GHFollowersUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1089,9 +1089,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = FollowerListViewController;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1119,9 +1119,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GHFollowers/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = FollowerListViewController;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

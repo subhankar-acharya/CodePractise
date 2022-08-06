@@ -19,7 +19,7 @@ class FollowerDetailViewControllerTests: XCTestCase {
     func testDetailViewController_WhenCreated_HasLabel() throws {
         //helps us unwrap optional values
         let detailNameLabel = try XCTUnwrap(sut.detailNameLabel, "The Detail Name label is not connected to an IBOutlet")
-        XCTAssertEqual(detailNameLabel.text, "", "Detail name label not empty when view controller initially loaded")
+        XCTAssertEqual(detailNameLabel.text, "", "Detail name label is empty when view controller initially loaded")
     }
 
     func testDetailViewController_WhenCreated_HasGetFollowersButtonAndAction() throws {
@@ -27,6 +27,6 @@ class FollowerDetailViewControllerTests: XCTestCase {
         let tapProfileButtonAction = try XCTUnwrap(tapProfileButton.actions(forTarget: sut, forControlEvent: .touchUpInside), "Tap Profile button does not have any actions assigned to it")
         XCTAssertEqual(tapProfileButtonAction.count, 1)
         //check if action assigned to button is the one expected
-        XCTAssertEqual(tapProfileButtonAction.first, "didTapProfile", "No action with a name didTapProfile assigned to profile button")
+        XCTAssertEqual(tapProfileButtonAction.first, "didTapProfile:", "No action with a name didTapProfile assigned to profile button")
     }
 }

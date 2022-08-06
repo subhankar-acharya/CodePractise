@@ -12,6 +12,7 @@ final class FollowerListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private enum Constants {
         static let screenTitle = "Followers"
+        static let tableViewAccessibilityIdentifier = "FollowersTableView"
     }
 
     // MARK: - Property
@@ -20,10 +21,8 @@ final class FollowerListViewController: UIViewController {
     // MARK: - Viewcontroller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title =  Constants.screenTitle
-        view.accessibilityIdentifier = Constants.screenTitle
-        fetchFollowers()
         configure()
+        fetchFollowers()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +33,9 @@ final class FollowerListViewController: UIViewController {
     // MARK: - Method
     func configure() {
         tableView.register(FollowerCell.self, forCellReuseIdentifier: FollowerCell.Constants.reuseID)
+        tableView.accessibilityIdentifier = Constants.tableViewAccessibilityIdentifier
+        self.title =  Constants.screenTitle
+        view.accessibilityIdentifier = Constants.screenTitle
         navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
