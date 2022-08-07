@@ -20,12 +20,12 @@ protocol FollowerDetailProtcol: AnyObject {
 class MainCoordinator: Coordinator {
     //var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    private let followerModule: FollowerModule
+    //private let followerModule: FollowerModule
    // private let detailModule: DetailModule
     
-    init(navigationController: UINavigationController, followerModule: FollowerModule) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.followerModule = followerModule
+        //self.followerModule = followerModule
     }
     
     //bootstraps our app by creating our main viewcontroller

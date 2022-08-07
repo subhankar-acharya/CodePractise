@@ -15,10 +15,12 @@ final class AppContainer {
     }()
 
     func startApp(on window: UIWindow?) {
-        let module = FollowerModule(networkManager: networkManager)
-        let controller = module.createFollowerListViewController()
-        let navigationController: UINavigationController = UINavigationController(rootViewController: controller)
+        let navigationController = UINavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        let module = FollowerModule(networkManager: networkManager)
+        let followerFlow = module.createFollowerFlowCoordinator(navigationController: navigationController)
+        followerFlow.start()
     }
 }

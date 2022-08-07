@@ -21,6 +21,12 @@ final class FollowerModule {
     }
 
     // MARK: - Methods
+    
+    
+    func createFollowerFlowCoordinator(navigationController: UINavigationController) -> MainCoordinator {
+        return MainCoordinator.init(navigationController: navigationController, followerModule: self)
+    }
+    
     //setting up Follower View Controller
     func createFollowerListViewController() -> UIViewController {
         let viewController = FollowerListViewController.init(nibName: Constants.nibName, bundle: nil)
