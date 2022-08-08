@@ -20,6 +20,10 @@ class MockDetailViewModelTest: XCTestCase  {
         detailViewModel?.outputDelegate = self
     }
 
+    override func tearDownWithError() throws {
+        detailViewModel = nil
+    }
+    
     func testViewModel_Success() {
         expectation = expectation(description: "Success case")
         useCase.validateURL(for: follower.htmlUrl) { result in

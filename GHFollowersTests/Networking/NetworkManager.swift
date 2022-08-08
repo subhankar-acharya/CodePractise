@@ -19,6 +19,10 @@ class NetworkManagerTest: XCTestCase {
         let urlSession = URLSession.init(configuration: configuration)
         networkManager = NetworkManger(session: urlSession)
     }
+    
+    override func tearDownWithError() throws {
+        networkManager = nil
+    }
 
     func test_NetworkClass_ForSuccess() {
 

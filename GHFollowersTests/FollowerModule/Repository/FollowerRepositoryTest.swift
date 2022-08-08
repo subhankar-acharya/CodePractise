@@ -16,6 +16,10 @@ class FollowerRepositoryTest: XCTestCase {
     override func setUpWithError() throws {
         followerRepository = FollowerRepository(service: mockService)
     }
+    
+    override func tearDownWithError() throws {
+        followerRepository = nil
+    }
 
     func testRepository_Success() {
         let expecatation = expectation(description: "Success")

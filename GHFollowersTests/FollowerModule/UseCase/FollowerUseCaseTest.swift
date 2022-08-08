@@ -16,6 +16,10 @@ class FollowerUseCaseTest: XCTestCase {
     override func setUpWithError() throws {
         useCase = FollowerUseCase(repository: repository)
     }
+    
+    override func tearDownWithError() throws {
+        useCase = nil
+    }
 
     func testUseCase_Success() {
         let expecatation = expectation(description: "Success")

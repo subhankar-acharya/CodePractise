@@ -18,6 +18,10 @@ class FollowerViewModelTest: XCTestCase {
         followerViewModel = FollowerViewModel(useCase: useCase)
         followerViewModel?.outputDelegate = self
     }
+    
+    override func tearDownWithError() throws {
+        followerViewModel = nil
+    }
 
     func testViewModel_Success() {
         expecatation = expectation(description: "Success")
@@ -34,7 +38,7 @@ class FollowerViewModelTest: XCTestCase {
     }
 }
 
-extension UserViewModelTest: FollowerViewModelOutput {
+extension FollowerViewModelTest: FollowerViewModelOutput {
 
     func success() {
         expecatation.fulfill()

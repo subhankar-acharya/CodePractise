@@ -16,6 +16,10 @@ class FollowerServiceTest: XCTestCase {
     override func setUpWithError() throws {
         followerService = FollowerService(network: mockNetworkManager)
     }
+    
+    override func tearDownWithError() throws {
+        followerService = nil
+    }
 
     func testService_Success() {
         let expecatation = expectation(description: "Success")
