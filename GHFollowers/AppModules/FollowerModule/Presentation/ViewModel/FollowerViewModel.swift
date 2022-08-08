@@ -6,7 +6,7 @@
 //
 
 import Foundation
-/// Passes the username string to use case layer and callbacks viewcontroller with data
+/// Calls the use case layer and passes back data to viewcontroller via delegate pattern
 final class FollowerViewModel: FollowerViewModelProtocol {
     // MARK: - Properties
     weak var outputDelegate: FollowerViewModelOutput?
