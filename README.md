@@ -16,5 +16,8 @@ Landscape
 
 # Architecture Diagram
 
-[Architecture Diagram](https://github.com/Subhankar89/Assignment/blob/main/App%20Architecture%20Overview/App%20Architecture.png)
+<img width="1260" alt="Architecture" src="https://user-images.githubusercontent.com/35475791/183427171-0a2d0ff2-73ff-49a5-8f41-1511cb0d123b.png">
+
+
+
 
