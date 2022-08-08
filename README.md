@@ -5,13 +5,16 @@ an user's profile on an external browser on tap of Profile button available on d
 
 # Screen Shots
 
-<img width="261" alt="Screenshot 2022-08-08 at 4 55 36 PM" src="https://user-images.githubusercontent.com/35475791/183407578-93cb2b19-a286-43d7-a1bf-91945826b3a5.png"> <img width="512" alt="Screenshot 2022-08-08 at 4 56 51 PM" src="https://user-images.githubusercontent.com/35475791/183407789-2afb3d34-8fe7-4448-be99-355597f390b0.png">
+Potrait
 
+<img width="259" alt="Screenshot 2022-08-08 at 5 02 53 PM" src="https://user-images.githubusercontent.com/35475791/183409086-2867f028-8eb1-4a1b-85a3-2df0f5227cc3.png">   <img width="259" alt="Screenshot 2022-08-08 at 5 02 53 PM" src="https://user-images.githubusercontent.com/35475791/183409222-7f37fc9c-bfa3-46e7-a1c8-715c2795f75f.png">   <img width="259" alt="Screenshot 2022-08-08 at 5 02 53 PM" src="https://user-images.githubusercontent.com/35475791/183408895-93f9c6f9-e674-495b-9a6c-386e411d2026.png">
+
+Landscape
+
+<img width="479" alt="Screenshot 2022-08-08 at 5 07 55 PM" src="https://user-images.githubusercontent.com/35475791/183409506-9a2ecc99-5c1b-4812-961e-67348430841e.png"> <img width="479" alt="Screenshot 2022-08-08 at 5 07 55 PM" src="https://user-images.githubusercontent.com/35475791/183409806-2839acc6-18ed-4d60-814b-7dea5830544e.png">
 
 
 # Architecture Diagram
-
-Below is the link:
 
 [Architecture Diagram](https://github.com/Subhankar89/Assignment/blob/main/App%20Architecture%20Overview/App%20Architecture.png)
 
