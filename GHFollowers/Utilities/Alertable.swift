@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices
 
 protocol Alertable {
     func showAlert(title: String?, message: String?, on controller: UIViewController)

@@ -8,7 +8,7 @@
 import XCTest
 @testable import GHFollowers
 
-class UserViewModelTest: XCTestCase {
+class FollowerViewModelTest: XCTestCase {
 
     var followerViewModel: FollowerViewModel?
     var useCase = MockFollowersUseCase()
