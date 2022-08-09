@@ -18,9 +18,7 @@ final class AppContainer {
         let navigationController = UINavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
-        let module = FollowerModule(networkManager: networkManager)
-        let followerFlow = module.createFollowerFlowCoordinator(navigationController: navigationController)
-        followerFlow.start()
+        let module = FollowerModule(networkManager: networkManager, navigationController: navigationController)
+        module.start()
     }
 }

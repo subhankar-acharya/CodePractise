@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3208D7B7289E91DE00203919 /* FollowersTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208D7B6289E91DE00203919 /* FollowersTableUITests.swift */; };
-		321E232E289F655C00CA2C42 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E232D289F655C00CA2C42 /* MainCoordinator.swift */; };
+		321E232E289F655C00CA2C42 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321E232D289F655C00CA2C42 /* RouterProtocol.swift */; };
 		8FD861C4288D0D6D0065B214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861C3288D0D6D0065B214 /* AppDelegate.swift */; };
 		8FD861C6288D0D6D0065B214 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD861C5288D0D6D0065B214 /* SceneDelegate.swift */; };
 		8FD861CD288D0D6E0065B214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FD861CC288D0D6E0065B214 /* Assets.xcassets */; };
@@ -93,7 +93,7 @@
 		202802F2B92D4228A14FE93B /* Pods-GHFollowers-GHFollowersUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowers-GHFollowersUITests.release.xcconfig"; path = "Target Support Files/Pods-GHFollowers-GHFollowersUITests/Pods-GHFollowers-GHFollowersUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2D156465EFFF71F8578275D7 /* Pods_GHFollowers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3208D7B6289E91DE00203919 /* FollowersTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableUITests.swift; sourceTree = "<group>"; };
-		321E232D289F655C00CA2C42 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		321E232D289F655C00CA2C42 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		4C0298005B98D0AFA1D16446 /* Pods_GHFollowersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHFollowersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625F4BDB3E0E0C908F7D73D7 /* Pods-GHFollowers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GHFollowers.release.xcconfig"; path = "Target Support Files/Pods-GHFollowers/Pods-GHFollowers.release.xcconfig"; sourceTree = "<group>"; };
 		8FD861C0288D0D6D0065B214 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,7 +264,7 @@
 				8FD861C5288D0D6D0065B214 /* SceneDelegate.swift */,
 				8FD861C3288D0D6D0065B214 /* AppDelegate.swift */,
 				8FD861F4288D2FCD0065B214 /* AppContainer.swift */,
-				321E232D289F655C00CA2C42 /* MainCoordinator.swift */,
+				321E232D289F655C00CA2C42 /* RouterProtocol.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -881,7 +881,7 @@
 				8FD8629C288D4BD70065B214 /* FollowerRepository.swift in Sources */,
 				8FD861F5288D2FCD0065B214 /* AppContainer.swift in Sources */,
 				8FD8627A288D49610065B214 /* ViewControllerUtilities.swift in Sources */,
-				321E232E289F655C00CA2C42 /* MainCoordinator.swift in Sources */,
+				321E232E289F655C00CA2C42 /* RouterProtocol.swift in Sources */,
 				8FD86299288D4BD70065B214 /* FollowerModule.swift in Sources */,
 				8FD8629F288D4BD70065B214 /* FollowerUseCase.swift in Sources */,
 				8FD8629A288D4BD70065B214 /* AppConstants.swift in Sources */,
