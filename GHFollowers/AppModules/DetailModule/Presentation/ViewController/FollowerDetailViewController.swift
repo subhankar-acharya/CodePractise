@@ -13,6 +13,8 @@ class FollowerDetailViewController: UIViewController {
     @IBOutlet weak var detailNameLabel: UILabel!
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
+    
+    var coordinator: DetailRouterProtocol?
 
     // MARK: - Properties
     var viewModel: DetailViewModelProtocol?

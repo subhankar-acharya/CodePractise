@@ -25,9 +25,7 @@ extension FollowerListViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let follower = viewModel?.followers[indexPath.row] {
-            let module = DetailModule(follower: follower)
-            let followerDetailViewController = module.createFollowerDetailViewController()
-            self.navigationController?.pushViewController(followerDetailViewController, animated: true)
+            coordinator?.showDetailModule(followerModel: follower)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

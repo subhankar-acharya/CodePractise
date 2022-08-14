@@ -6,31 +6,43 @@
 //
 
 import UIKit
+
+protocol FollowerRouterProtocol: RouterProtocol {
+    func showDetailModule(followerModel: Follower)
+}
+
 /// Builds up all the layer of Follower module.
-final class FollowerModule {
+final class FollowerModule: FollowerRouterProtocol {
 
     // MARK: - Properties
     private let networkManager: NetworkManagerProtocol
+    var navigationController: UINavigationController
     private enum Constants {
         static let nibName = "FollowerListViewController"
     }
 
     // MARK: - Initialise
-    init(networkManager:NetworkManagerProtocol) {
+    init(networkManager:NetworkManagerProtocol, navigationController: UINavigationController) {
         self.networkManager = networkManager
+        self.navigationController = navigationController
     }
 
     // MARK: - Methods
+    func start() {
+        let vc = createFollowerListViewController()
+        navigationController.pushViewController(vc, animated: true)
+    }
     
-    
-    func createFollowerFlowCoordinator(navigationController: UINavigationController) -> MainCoordinator {
-        return MainCoordinator.init(navigationController: navigationController, followerModule: self)
+    func showDetailModule(followerModel: Follower) {
+        let module = DetailModule(follower: followerModel, navigationController: navigationController)
+        module.start()
     }
     
     //setting up Follower View Controller
     func createFollowerListViewController() -> UIViewController {
         let viewController = FollowerListViewController.init(nibName: Constants.nibName, bundle: nil)
         viewController.viewModel = createFollowerViewModel()
+        viewController.coordinator = self
         viewController.viewModel?.outputDelegate = viewController
         return viewController
     }

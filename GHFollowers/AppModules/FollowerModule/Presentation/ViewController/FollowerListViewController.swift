@@ -10,11 +10,13 @@ import UIKit
 final class FollowerListViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet weak var tableView: UITableView!
+    
+    var coordinator: FollowerRouterProtocol?
+    
     private enum Constants {
         static let screenTitle = "Followers"
         static let tableViewAccessibilityIdentifier = "FollowersTableView"
     }
-
     // MARK: - Property
     var viewModel: FollowerViewModelProtocol?
 
