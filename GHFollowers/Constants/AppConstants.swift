@@ -9,6 +9,6 @@ import Foundation
 
 enum AppConstants {
     enum UserAPIEndpoint {
-        static let baseURL = "https://subhankar-acharya.github.io/Resources/followers.json"
+        static let baseURL = "https://subhankar-acharya.github.io/CodePractise/Resources/followers.json"
     }
 }
