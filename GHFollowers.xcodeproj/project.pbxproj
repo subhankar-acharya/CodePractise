@@ -33,8 +33,11 @@
 		8FD862A6288D4BD70065B214 /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD86296288D4BD70065B214 /* FollowerListViewController.swift */; };
 		8FD862A9288D4CBA0065B214 /* FollowerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD862A8288D4CBA0065B214 /* FollowerListViewController.xib */; };
 		8FD862AC288D53110065B214 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD862AA288D53110065B214 /* FollowerCell.swift */; };
+		9E0612672E8C957100FA3207 /* NetworkManagerExtraKeysTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0612662E8C957100FA3207 /* NetworkManagerExtraKeysTest.swift */; };
+		9E0612692E8C95A700FA3207 /* NetworkManagerInvalidJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0612682E8C95A700FA3207 /* NetworkManagerInvalidJSONTest.swift */; };
 		9E8048BD288E9115009D325A /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8048BC288E9115009D325A /* GFTitleLabel.swift */; };
 		9E8048BF288E9140009D325A /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8048BE288E9140009D325A /* GFAvatarImageView.swift */; };
+		9E9222D92E8C96C40049D9C3 /* AlertableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9222D72E8C96C40049D9C3 /* AlertableTests.swift */; };
 		9E990AA52897B4950043BCA8 /* ErrorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E990AA42897B4950043BCA8 /* ErrorConstants.swift */; };
 		9E99B6B0289CB4CC00B97F49 /* DetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6AF289CB4CC00B97F49 /* DetailUseCase.swift */; };
 		9E99B6B2289CB4DF00B97F49 /* DetailUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E99B6B1289CB4DF00B97F49 /* DetailUseCaseProtocol.swift */; };
@@ -113,8 +116,11 @@
 		8FD86296288D4BD70065B214 /* FollowerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 		8FD862A8288D4CBA0065B214 /* FollowerListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowerListViewController.xib; sourceTree = "<group>"; };
 		8FD862AA288D53110065B214 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		9E0612662E8C957100FA3207 /* NetworkManagerExtraKeysTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerExtraKeysTest.swift; sourceTree = "<group>"; };
+		9E0612682E8C95A700FA3207 /* NetworkManagerInvalidJSONTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerInvalidJSONTest.swift; sourceTree = "<group>"; };
 		9E8048BC288E9115009D325A /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		9E8048BE288E9140009D325A /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		9E9222D72E8C96C40049D9C3 /* AlertableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertableTests.swift; sourceTree = "<group>"; };
 		9E990AA42897B4950043BCA8 /* ErrorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorConstants.swift; sourceTree = "<group>"; };
 		9E99B6AF289CB4CC00B97F49 /* DetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCase.swift; sourceTree = "<group>"; };
 		9E99B6B1289CB4DF00B97F49 /* DetailUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 		8FD861D9288D0D6E0065B214 /* GHFollowersTests */ = {
 			isa = PBXGroup;
 			children = (
+				9E9222D82E8C96C40049D9C3 /* Utilities */,
 				9EBC7725288FD23600638A08 /* ViewControllers */,
 				9E9C693C288ED55E003181AE /* Networking */,
 				9E9C6944288EDA05003181AE /* FollowerModule */,
@@ -401,6 +408,14 @@
 			path = Labels;
 			sourceTree = "<group>";
 		};
+		9E9222D82E8C96C40049D9C3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9E9222D72E8C96C40049D9C3 /* AlertableTests.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		9E99B6AD289CB48B00B97F49 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +473,8 @@
 			children = (
 				9E9C693D288ED586003181AE /* MockURLProtocol.swift */,
 				9E9C6942288ED81E003181AE /* NetworkManager.swift */,
+				9E0612682E8C95A700FA3207 /* NetworkManagerInvalidJSONTest.swift */,
+				9E0612662E8C957100FA3207 /* NetworkManagerExtraKeysTest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -766,15 +783,18 @@
 				9E9C6943288ED81E003181AE /* NetworkManager.swift in Sources */,
 				9E9C6946288EDA1D003181AE /* MockFollowersData.swift in Sources */,
 				9E9C693E288ED586003181AE /* MockURLProtocol.swift in Sources */,
+				9E0612672E8C957100FA3207 /* NetworkManagerExtraKeysTest.swift in Sources */,
 				9E9C6956288EDEA1003181AE /* MockFollowersNetworkManager.swift in Sources */,
 				9E99B6BB289D118F00B97F49 /* MockDetailViewModelTest.swift in Sources */,
 				9E9C695C288EDFFF003181AE /* FollowerServiceTest.swift in Sources */,
 				9E9C694D288EDBC3003181AE /* FollowerViewModelTest.swift in Sources */,
 				9E9C6954288EDDB3003181AE /* MockFollowersService.swift in Sources */,
 				9E99B6B5289D105400B97F49 /* MockDetailData.swift in Sources */,
+				9E9222D92E8C96C40049D9C3 /* AlertableTests.swift in Sources */,
 				9E9C695A288EDEF3003181AE /* MockFollowersRepository.swift in Sources */,
 				9EBC7724288FBA3E00638A08 /* FollowerDetailViewControllerTests.swift in Sources */,
 				9E9C6958288EDEE4003181AE /* MockFollowersUseCase.swift in Sources */,
+				9E0612692E8C95A700FA3207 /* NetworkManagerInvalidJSONTest.swift in Sources */,
 				9E9C695E288EE12B003181AE /* FollowerRepositoryTest.swift in Sources */,
 				9E99B6B8289D10F100B97F49 /* MockDetailUseCase.swift in Sources */,
 				9E9C6960288EE20E003181AE /* FollowerUseCaseTest.swift in Sources */,
