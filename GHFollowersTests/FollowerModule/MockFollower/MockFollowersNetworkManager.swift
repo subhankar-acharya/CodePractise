@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PromiseKit
 @testable import GHFollowers
 
 class MockFollowersNetworkManager: NetworkManagerProtocol {
@@ -14,17 +13,19 @@ class MockFollowersNetworkManager: NetworkManagerProtocol {
     var follower: [Follower]?
     var error: Error?
 
-    func request<T: Codable>(_ type: T.Type, endPoint: URL) -> Response<T> {
-        return Promise { seal in
-            if let error = error {
-                seal.reject(error)
-            } else {
-                if let follower = follower {
-                    seal.fulfill(follower as! T)
-                } else {
-                    seal.reject(NSError(domain: "com.example.error", code: 1, userInfo: [NSLocalizedDescriptionKey: "No Data available"]))
-                }
-            }
+    func request<T: Decodable>(
+        _ type: T.Type,
+        endPoint: URL,
+        completion: @escaping (Result<T, Error>) -> Void
+    ) {
+        if let error = error {
+            completion(.failure(error))
+            return
         }
+        if let follower = follower, let casted = follower as? T {
+            completion(.success(casted))
+            return
+        }
+        completion(.failure(NSError(domain: "com.example.error", code: 1, userInfo: [NSLocalizedDescriptionKey: "No Data available"])) )
     }
 }

@@ -40,16 +40,18 @@ class NetworkManagerTest: XCTestCase {
         }
         guard let testUrl = testUrl,
               let networkManager = networkManager else { return }
-        networkManager.request([Follower].self, endPoint: testUrl)
-            .done { model in
+        networkManager.request([Follower].self, endPoint: testUrl) { result in
+            switch result {
+            case .success(let model):
                 let followerCount = model.count
                 if followerCount >= 1 {
                     XCTAssertTrue(model.first?.login == "Test User")
                     expecatation.fulfill()
                 }
-            }.catch { error in
+            case .failure(let error):
                 XCTFail("Error was not expected in this case: \(error)")
             }
+        }
 
         wait(for: [expecatation], timeout: 1.0)
     }
@@ -69,12 +71,14 @@ class NetworkManagerTest: XCTestCase {
 
         guard let testUrl = testUrl,
               let networkManager = networkManager else { return }
-        networkManager.request(Follower.self, endPoint: testUrl)
-            .done { model in
+        networkManager.request(Follower.self, endPoint: testUrl) { result in
+            switch result {
+            case .success:
                 XCTFail("Success response was not expected in this case.")
-            }.catch { error in
+            case .failure:
                 expectation.fulfill()
             }
+        }
 
         wait(for: [expectation], timeout: 1.0)
     }

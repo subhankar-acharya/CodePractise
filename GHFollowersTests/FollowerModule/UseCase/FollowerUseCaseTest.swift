@@ -26,14 +26,17 @@ class FollowerUseCaseTest: XCTestCase {
 
         repository.follower = MockFollowersData.follower
         guard let useCase = useCase else { return }
-        useCase.getFollowers()
-            .done { model in
+        useCase.getFollowers { result in
+            switch result {
+            case .success(let model):
                 let followerCount = model.count
                 if followerCount >= 1 {
                     expecatation.fulfill()
                 }
+            case .failure:
+                XCTFail("Unexpected failure in use case success test")
             }
-            .catch { _ in }
+        }
 
         wait(for: [expecatation], timeout: 1.0)
     }
@@ -42,11 +45,15 @@ class FollowerUseCaseTest: XCTestCase {
         let expecatation = expectation(description: "Failure")
         repository.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kUseCaseFailedErrorMessage])
         guard let useCase = useCase else { return }
-        useCase.getFollowers()
-            .catch { error in
+        useCase.getFollowers { result in
+            switch result {
+            case .success:
+                XCTFail("Expected failure")
+            case .failure(let error):
                 XCTAssertTrue(error.localizedDescription == ErrorMessage.kUseCaseFailedErrorMessage)
                 expecatation.fulfill()
             }
+        }
 
         wait(for: [expecatation], timeout: 1.0)
     }

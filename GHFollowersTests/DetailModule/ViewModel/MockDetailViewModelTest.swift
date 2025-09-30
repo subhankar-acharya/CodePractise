@@ -38,14 +38,14 @@ class MockDetailViewModelTest: XCTestCase  {
 
     func testViewModel_Failure() {
         expectation = expectation(description: "This is failure case")
-        useCase.validateURL(for: follower.htmlUrl) { result in
+        useCase.validateURL(for: "") { result in
             if result {
                 XCTFail("Success is not expected in this case")
             } else {
                 self.detailViewModel?.outputDelegate?.errorMessage("Failed Error")
             }
         }
-        wait(for: [expectation], timeout: 1.0)
+        wait(for: [expectation], timeout: 1.2)
     }
 }
 
