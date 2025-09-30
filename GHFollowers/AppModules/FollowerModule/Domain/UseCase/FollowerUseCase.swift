@@ -6,16 +6,16 @@
 //
 
 import Foundation
-/// Passes user name string to repository layer 
+/// Passes user name string to repository layer
 class FollowerUseCase: FollowerUseCaseProtocol {
-
+    
     private let repository: FollowerRepositoryProtocol
-
+    
     init(repository: FollowerRepositoryProtocol) {
         self.repository = repository
     }
-
-    func getFollowers() -> FollowerResponse {
-        return repository.makeServiceCallToGetFollowers()
+    
+    func getFollowers(completion: @escaping (Result<[Follower], Error>) -> Void) {
+        repository.makeServiceCallToGetFollowers(completion: completion)
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FollowerServiceProtocol {
-    func makeNetworkRequest() -> FollowerResponse
+    func makeNetworkRequest(completion: @escaping (Result<[Follower], Error>) -> Void)
 }

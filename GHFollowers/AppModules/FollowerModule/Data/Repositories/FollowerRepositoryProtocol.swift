@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FollowerRepositoryProtocol {
-    func makeServiceCallToGetFollowers() -> FollowerResponse
+    func makeServiceCallToGetFollowers(completion: @escaping (Result<[Follower], Error>) -> Void)
 }
