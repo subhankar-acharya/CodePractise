@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FollowerUseCaseProtocol {
-    func getFollowers() -> FollowerResponse
+    func getFollowers(completion: @escaping (Result<[Follower], Error>) -> Void)
 }

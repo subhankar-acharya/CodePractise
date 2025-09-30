@@ -20,13 +20,16 @@ final class FollowerViewModel: FollowerViewModelProtocol {
 
     // MARK: - Methods
     func fetchFollowers() {
-        useCase.getFollowers()
-            .done(on: .main) { [weak self] model in
-                self?.getData(model: model)
+        useCase.getFollowers { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    self?.getData(model: model)
+                case .failure(let error):
+                    self?.outputDelegate?.errorMessage(error.localizedDescription)
+                }
             }
-            .catch(on: .main, policy: .allErrors) { [weak self] error in
-                self?.outputDelegate?.errorMessage(error.localizedDescription)
-            }
+        }
     }
 
     private func getData(model: [Follower]) {

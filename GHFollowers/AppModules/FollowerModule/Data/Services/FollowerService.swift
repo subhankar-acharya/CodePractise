@@ -6,22 +6,23 @@
 //
 
 import Foundation
-import PromiseKit
 /// Makes network call after preparing url
 class FollowerService: FollowerServiceProtocol {
-
+    
     private let network: NetworkManagerProtocol
-
+    
     init(network: NetworkManagerProtocol) {
         self.network = network
     }
     
-    func makeNetworkRequest() -> FollowerResponse {
+    func makeNetworkRequest(completion: @escaping (Result<[Follower], Error>) -> Void) {
         let endPoint = AppConstants.UserAPIEndpoint.baseURL
         let url = URL(string: endPoint)
-        guard let url = url else { return Promise.value([]) }
-        let followerResponse = network.request([Follower].self, endPoint: url)
-        return followerResponse
+        guard let url = url else {
+            completion(.success([]))
+            return
+        }
+        network.request([Follower].self, endPoint: url, completion: completion)
     }
 }
 

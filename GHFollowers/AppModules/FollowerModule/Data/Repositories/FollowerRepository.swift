@@ -15,7 +15,7 @@ class FollowerRepository: FollowerRepositoryProtocol {
         self.service = service
     }
 
-    func makeServiceCallToGetFollowers() -> FollowerResponse {
-        return service.makeNetworkRequest()
+    func makeServiceCallToGetFollowers(completion: @escaping (Result<[Follower], Error>) -> Void) {
+        return service.makeNetworkRequest(completion: completion)
     }
 }
