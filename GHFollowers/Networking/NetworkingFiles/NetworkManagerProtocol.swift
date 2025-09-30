@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import PromiseKit
-
-typealias Response<T> = Promise<T>
-typealias FollowerResponse = Promise<[Follower]>
 
 protocol NetworkManagerProtocol {
-    func request<T: Codable>(_ type: T.Type, endPoint: URL) -> Response<T>
+    func request<T: Decodable>(
+            _ type: T.Type,
+            endPoint: URL,
+            completion: @escaping (Result<T, Error>) -> Void
+        )
 }
