@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import PromiseKit
 @testable import GHFollowers
 
 class MockFollowersUseCase: FollowerUseCaseProtocol {
@@ -14,15 +13,15 @@ class MockFollowersUseCase: FollowerUseCaseProtocol {
     var follower: [Follower]?
     var error: Error?
 
-    func getFollowers() -> FollowerResponse {
-        return Promise { seal in
-            if let error = error {
-                seal.reject(error)
-            } else {
-                if let follower = follower {
-                    seal.fulfill(follower)
-                }
-            }
+    func getFollowers(completion: @escaping (Result<[Follower], Error>) -> Void) {
+        if let error = error {
+            completion(.failure(error))
+            return
         }
+        if let follower = follower {
+            completion(.success(follower))
+            return
+        }
+        completion(.failure(NSError(domain: "com.example.error", code: 1, userInfo: [NSLocalizedDescriptionKey: "No Data available"])) )
     }
 }

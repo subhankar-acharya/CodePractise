@@ -29,4 +29,17 @@ class FollowerDetailViewControllerTests: XCTestCase {
         //check if action assigned to button is the one expected
         XCTAssertEqual(tapProfileButtonAction.first, "didTapProfile:", "No action with a name didTapProfile assigned to profile button")
     }
+
+    func test_ShowFollowerDetail_PopulatesUI() {
+        // Given a follower and view model
+        let follower = MockDetailData.follower
+        let vm = DetailViewModel(follower: follower, useCase: DetailUseCase())
+        sut.viewModel = vm
+        
+        // View was already loaded in setUp, so directly invoke detail population
+        sut.showFollowerDetail()
+
+        // Then
+        XCTAssertEqual(sut.detailNameLabel.text, follower.username)
+    }
 }

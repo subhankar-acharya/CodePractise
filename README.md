@@ -21,7 +21,7 @@ an user's profile on an external browser on tap of Profile button available on d
       - XCUITest
     
    -  **Third Party:**
-      - PromiseKit included via Cocaopods
+      - None (migrated to native URLSession with completion handlers)
   
 # Screen Shots
 

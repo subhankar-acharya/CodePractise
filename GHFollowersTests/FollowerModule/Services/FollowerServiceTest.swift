@@ -25,16 +25,18 @@ class FollowerServiceTest: XCTestCase {
         let expecatation = expectation(description: "Success")
         mockNetworkManager.follower = MockFollowersData.follower
         guard let followerService = followerService else { return }
-        followerService.makeNetworkRequest()
-            .done { model in
+        followerService.makeNetworkRequest { result in
+            switch result {
+            case .success(let model):
                 let followerCount = model.count
                 if followerCount >= 1 {
                     expecatation.fulfill()
                 }
-            }
-            .catch { _ in
+            case .failure:
+                XCTFail("Unexpected failure in service success test")
                 expecatation.fulfill()
             }
+        }
         wait(for: [expecatation], timeout: 1.0)
     }
 
@@ -42,10 +44,11 @@ class FollowerServiceTest: XCTestCase {
         let expecatation = expectation(description: "Follower service on success case")
         mockNetworkManager.error = NSError(domain: "com.example.error", code: 0, userInfo: [NSLocalizedDescriptionKey: ErrorMessage.kServiceFailedErrorMeesage])
         guard let followerService = followerService else { return }
-        followerService.makeNetworkRequest()
-            .catch { _ in
+        followerService.makeNetworkRequest { result in
+            if case .failure = result {
                 expecatation.fulfill()
             }
+        }
         wait(for: [expecatation], timeout: 1.0)
     }
 }
