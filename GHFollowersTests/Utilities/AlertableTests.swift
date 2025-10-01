@@ -10,8 +10,14 @@ import UIKit
 @testable import GHFollowers
 
 final class AlertableTests: XCTestCase, Alertable {
+    private var window: UIWindow!
+
+    override func tearDownWithError() throws {
+        window = nil
+    }
+
     func test_ShowAlert_PresentsAlertController() {
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         let vc = UIViewController()
         window.rootViewController = vc
         window.makeKeyAndVisible()
@@ -31,4 +37,3 @@ final class AlertableTests: XCTestCase, Alertable {
         wait(for: [expectation], timeout: 1.0)
     }
 }
-

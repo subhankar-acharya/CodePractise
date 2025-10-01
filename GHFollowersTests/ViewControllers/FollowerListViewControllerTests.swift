@@ -12,6 +12,12 @@ import UIKit
 
 final class FollowerListViewControllerTests: XCTestCase {
 
+    private var window: UIWindow!
+
+    override func tearDownWithError() throws {
+        window = nil
+    }
+
     // Simple mock view model that returns canned followers and calls delegate
     final class MockFollowerViewModel: FollowerViewModelProtocol {
         var followers: [Follower] = []
@@ -43,7 +49,7 @@ final class FollowerListViewControllerTests: XCTestCase {
     func test_TableView_RendersRowsFromViewModel() {
         let followers = MockFollowersData.follower ?? []
         let (vc, _) = makeSUT(with: followers)
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = vc
         window.makeKeyAndVisible()
 

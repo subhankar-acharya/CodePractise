@@ -33,4 +33,10 @@ final class AppContainerTests: XCTestCase {
         XCTAssertNotNil(listVC.viewModel)
         XCTAssertTrue((listVC.viewModel?.outputDelegate as AnyObject?) === listVC)
     }
+
+    func test_AppContainer_ProvidesNetworkManager() {
+        let container = AppContainer()
+        let network = container.networkManager
+        XCTAssertTrue(network is NetworkManger)
+    }
 }

@@ -13,12 +13,16 @@ import SafariServices
 
 final class FollowerDetailViewControllerWiringTests: XCTestCase {
 
+    private var window: UIWindow!
+
+    override func tearDownWithError() throws {
+        window = nil
+    }
+
     private func makeWindowRooted(_ vc: UIViewController) {
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = vc
         window.makeKeyAndVisible()
-        // Keep window alive for the scope of test by associating it
-        objc_setAssociatedObject(self, Unmanaged.passUnretained(self).toOpaque(), window, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 
     func test_ProfileButton_PresentsSafari_ForValidURL() {
@@ -63,4 +67,3 @@ final class FollowerDetailViewControllerWiringTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 }
-
